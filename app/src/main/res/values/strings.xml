@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">OrgSpace</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_select_school">SelectSchool</string>
+    <string name="plymouth">Plymouth State University</string>
+    <string name="keene">Keene State College</string>
+    <string name="unh">University of New Hampshire</string>
+</resources>
