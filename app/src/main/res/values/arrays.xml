@@ -4,5 +4,11 @@
         <item>@string/keene</item>
         <item>@string/plymouth</item>
         <item>@string/unh</item>
+        <item>@string/une</item>
+        <item>@string/nhti</item>
+        <item>@string/snhu</item>
+        <item>@string/dartmouth</item>
+        <item>@string/lrcc</item>
+        <item>@string/granite</item>
     </array>
 </resources>

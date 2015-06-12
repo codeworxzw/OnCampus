@@ -1,6 +1,7 @@
 package com.devon_dickson.apps.orgspace;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
@@ -16,6 +18,7 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,11 +38,14 @@ public class SelectSchool extends ActionBarActivity {
         EditText searchBar;
         searchBar = (EditText) findViewById(R.id.schoolSearch);
 
-        String[] schools = getResources().getStringArray(R.array.schools);
+        final String[] schools = getResources().getStringArray(R.array.schools);
        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, schools);
         schoolList.setAdapter(adapter);
 
-        //in your Activity or Fragment where of Adapter is instantiated :
+        /******************************************************************************************
+         * Attach Listener to searchBar. On textChange, schoolList will filter based on SearchBar
+         * contents. See SearchableAdaptor class below.
+         ******************************************************************************************/
 
         searchBar.addTextChangedListener(new TextWatcher() {
 
@@ -58,6 +64,18 @@ public class SelectSchool extends ActionBarActivity {
             }
         });
 
+        /******************************************************************************************
+         * Attach onClick listener to schoolList to launch sign-in activity. Pass school name.
+         ******************************************************************************************/
+
+        schoolList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapter, View view, int position, long arg) {
+                String chosenSchool = schools[position];
+                Intent loginIntent = new Intent(SelectSchool.this, LoginActivity.class);
+                startActivity(loginIntent);
+            }
+        });
 
     }
 }

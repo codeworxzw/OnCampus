@@ -6,5 +6,15 @@
     <string name="title_activity_select_school">SelectSchool</string>
     <string name="plymouth">Plymouth State University</string>
     <string name="keene">Keene State College</string>
+    <string name="une">University of New England</string>
+    <string name="dartmouth">Dartmouth College</string>
+    <string name="snhu">Southern New Hampshire University</string>
+    <string name="granite">Granite State College</string>
+    <string name="nhti">New Hampshire Institute of Technology</string>
+    <string name="lrcc">Lakes Region Community College</string>
     <string name="unh">University of New Hampshire</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="StudentSign">Sign-In With\nStudent ID</string>
+    <string name="OrgSign">Sign-In With\nOrg ID</string>
+    <string name="signMessage">Events by PACE,\nPAW, MAPS &amp; More!</string>
 </resources>
