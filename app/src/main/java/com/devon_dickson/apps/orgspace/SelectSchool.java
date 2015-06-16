@@ -1,5 +1,6 @@
 package com.devon_dickson.apps.orgspace;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
@@ -24,14 +25,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class SelectSchool extends ActionBarActivity {
+public class SelectSchool extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_school);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.hide();
+       // ActionBar actionBar = getSupportActionBar();
+        //actionBar.hide();
 
         ListView schoolList;
         schoolList = (ListView) findViewById(R.id.schoolList);
@@ -72,7 +73,7 @@ public class SelectSchool extends ActionBarActivity {
             @Override
             public void onItemClick(AdapterView<?> adapter, View view, int position, long arg) {
                 String chosenSchool = schools[position];
-                Intent loginIntent = new Intent(SelectSchool.this, LoginActivity.class);
+                Intent loginIntent = new Intent(SelectSchool.this, MainActivity.class);
                 startActivity(loginIntent);
             }
         });

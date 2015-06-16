@@ -11,4 +11,17 @@
         <item>@string/lrcc</item>
         <item>@string/granite</item>
     </array>
+    <array name="nav">
+        <item>@string/upcoming</item>
+        <item>@string/calendar</item>
+        <item>@string/checkin</item>
+        <item>@string/action_settings</item>
+    </array>
+
+    <array name="nav_icons">
+        <item>@drawable/ic_home_black_48dp</item>
+        <item>@drawable/event</item>
+        <item>@drawable/ic_beenhere_black_48dp</item>
+        <item>@drawable/settings</item>
+    </array>
 </resources>

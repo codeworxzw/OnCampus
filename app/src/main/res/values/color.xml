@@ -6,4 +6,14 @@
     <color name="text">#888888</color>
     <color name="tan">#DEC694</color>
     <color name="green">#004E38</color>
+    <color name="brown">#795548</color>
+    <color name="ColorPrimary">#009688</color>
+    <color name="ColorPrimaryDark">#00796B</color>
+    <color name="lightPrimary">#B2DFDB</color>
+    <color name="textIcons">#FFFFFF</color>
+    <color name="Accent">#FF5722</color>
+    <color name="primText">#212121</color>
+    <color name="secondText">#727272</color>
+    <color name="dividerColor">#B6B6B6</color>
+
 </resources>

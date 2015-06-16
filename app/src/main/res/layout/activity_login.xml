@@ -19,9 +19,22 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/signMessage"
+        android:id="@+id/textView3"
+        android:layout_alignTop="@+id/relativeLayout"
+        android:layout_centerHorizontal="true"
+        android:phoneNumber="false" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/relativeLayout"
         android:layout_below="@+id/imageView2">
 
         <Button
@@ -31,18 +44,14 @@
             android:id="@+id/SignStudent"
             android:textStyle="bold"
             android:background="@color/green"
-            android:textSize="@dimen/abc_text_size_button_material"
             android:textColor="@color/white"
             android:paddingLeft="50dp"
             android:paddingRight="50dp"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            android:capitalize="words"
             android:layout_centerVertical="true"
-            android:layout_alignLeft="@+id/SignOrg"
-            android:layout_alignStart="@+id/SignOrg"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="10dp" />
+            android:layout_centerHorizontal="true"
+            android:typeface="sans" />
 
         <Button
             android:layout_width="wrap_content"
@@ -56,11 +65,44 @@
             android:paddingTop="10dp"
             android:paddingRight="50dp"
             android:paddingBottom="10dp"
+            android:layout_below="@+id/strike"
+            android:layout_alignRight="@+id/SignStudent"
+            android:layout_alignEnd="@+id/SignStudent" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="#8c000000"
+            android:layout_alignBottom="@+id/textView"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentStart="false"
+            android:baselineAlignBottom="false"
+            android:layout_alignParentBottom="false"
+            android:layout_alignParentTop="false"
+            android:layout_alignWithParentIfMissing="false"
+            android:id="@+id/strike"
+            android:layout_alignRight="@+id/SignOrg"
+            android:layout_alignLeft="@+id/SignOrg"
+            android:layout_alignEnd="@+id/SignOrg"
+            android:layout_alignParentEnd="false"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="OR"
+            android:id="@+id/textView"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:autoText="false"
+            android:background="#ffddc593"
             android:layout_below="@+id/SignStudent"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="10dp"
-            android:capitalize="words" />
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp" />
 
     </RelativeLayout>
 

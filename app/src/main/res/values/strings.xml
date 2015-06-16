@@ -17,4 +17,22 @@
     <string name="StudentSign">Sign-In With\nStudent ID</string>
     <string name="OrgSign">Sign-In With\nOrg ID</string>
     <string name="signMessage">Events by PACE,\nPAW, MAPS &amp; More!</string>
+    <string name="title_activity_agenda">Upcoming Events</string>
+    <string name="upcoming">Upcoming Events</string>
+    <string name="calendar">Calendar</string>
+    <string name="checkin">Check-In</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_example">Example action</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="openDrawer">Open</string>
+    <string name="closeDrawer">Close</string>
 </resources>
