@@ -1,12 +1,5 @@
 package com.devon_dickson.apps.orgspace;
 
-import android.app.ProgressDialog;
-import android.os.AsyncTask;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.content.Context;
-import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -14,23 +7,9 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.ListAdapter;
-import android.widget.ListView;
-import android.widget.SimpleAdapter;
-import android.widget.Toast;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.HashMap;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -38,13 +17,9 @@ public class MainActivity extends ActionBarActivity {
     //First We Declare Titles And Icons For Our Navigation Drawer List View
     //This Icons And Titles Are holded in an Array as you can see
 
-    String TITLES[] = {"Home","Calendar","Check-In","Settings",};
-    int ICONS[] = {R.drawable.ic_action_home,R.drawable.ic_action_calendar,R.drawable.ic_action_checkin,R.drawable.ic_action_settings};
-    ViewPager pager;
-    ViewPagerAdapter adapter;
-    SlidingTabLayout tabs;
-    CharSequence Titles[]={"All Events","Attending"};
-    int Numboftabs =2;
+    String TITLES[] = {"Upcoming Events","Calendar","Check-In","Settings"};
+    int ICONS[] = {R.drawable.ic_home_black_48dp,R.drawable.ic_event_black_48dp,R.drawable.ic_beenhere_black_48dp,R.drawable.ic_settings_black_48dp};
+
 
     //Similarly we Create a String Resource for the name and email in the header view
     //And we also create a int resource for profile picture in the header view
@@ -62,10 +37,7 @@ public class MainActivity extends ActionBarActivity {
 
     ActionBarDrawerToggle mDrawerToggle;                  // Declaring Action Bar Drawer Toggle
 
-    private final String EVENT_URL= "http://www.devon-dickson.com/event.php";
-    private static final String TAG_SUCCESS = "success";
-    private static final String TAG_MESSAGE = "message";
-    JSONParser jsonParser = new JSONParser();
+
 
 
     @Override
@@ -73,17 +45,13 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        FragmentManager fragman = getSupportFragmentManager();
-        FragmentTransaction fragTransaction = fragman.beginTransaction();
-        FragmentUpcoming f1 = new FragmentUpcoming();
-        fragTransaction.replace(R.id.fragment_place, f1); // f1_container is your FrameLayout container
-        fragTransaction.commit();
-
     /* Assinging the toolbar object ot the view
     and setting the the Action bar to our toolbar
      */
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
+
+
 
 
         mRecyclerView = (RecyclerView) findViewById(R.id.RecyclerView); // Assigning the RecyclerView Object to the xml View
@@ -95,61 +63,6 @@ public class MainActivity extends ActionBarActivity {
         // and header view profile picture
 
         mRecyclerView.setAdapter(mAdapter);                              // Setting the adapter to RecyclerView
-
-        final GestureDetector mGestureDetector = new GestureDetector(MainActivity.this, new GestureDetector.SimpleOnGestureListener() {
-
-            @Override public boolean onSingleTapUp(MotionEvent e) {
-                return true;
-            }
-
-        });
-
-
-        mRecyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
-            @Override
-            public boolean onInterceptTouchEvent(RecyclerView recyclerView, MotionEvent motionEvent) {
-                View child = recyclerView.findChildViewUnder(motionEvent.getX(), motionEvent.getY());
-
-
-                if (child != null && mGestureDetector.onTouchEvent(motionEvent)) {
-                    Drawer.closeDrawers();
-                   Fragment fr = null;
-                    switch (recyclerView.getChildPosition(child)) {
-                        case 1:
-                            fr = new FragmentUpcoming();
-                            break;
-                        case 2:
-                            fr = new FragmentCalendar();
-                            break;
-                        case 3:
-                            fr = new FragmentCheck();
-                            break;
-                        case 4:
-                            fr = new FragmentSettings();
-                            break;
-                        default:
-                            fr = new FragmentUpcoming();
-                    }
-                    FragmentManager fm = getSupportFragmentManager();
-                    FragmentTransaction fragmentTransaction = fm.beginTransaction();
-                    fragmentTransaction.replace(R.id.fragment_place, fr);
-                    fragmentTransaction.addToBackStack(null);
-                    fragmentTransaction.commit();
-                    Toast.makeText(MainActivity.this, "The Item Clicked is: " + recyclerView.getChildPosition(child), Toast.LENGTH_SHORT).show();
-
-                    return true;
-
-                }
-
-                return false;
-            }
-
-            @Override
-            public void onTouchEvent(RecyclerView recyclerView, MotionEvent motionEvent) {
-
-            }
-        });
-
 
         mLayoutManager = new LinearLayoutManager(this);                 // Creating a layout Manager
 
@@ -178,7 +91,6 @@ public class MainActivity extends ActionBarActivity {
         Drawer.setDrawerListener(mDrawerToggle); // Drawer Listener set to the Drawer toggle
         mDrawerToggle.syncState();               // Finally we set the drawer toggle sync State
 
-
     }
 
 
@@ -203,6 +115,4 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-
 }
