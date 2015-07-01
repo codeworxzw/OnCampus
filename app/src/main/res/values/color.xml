@@ -15,5 +15,7 @@
     <color name="primText">#212121</color>
     <color name="secondText">#727272</color>
     <color name="dividerColor">#B6B6B6</color>
+    <color name="tabsScrollColor">#B2DFDB</color>
+
 
 </resources>
