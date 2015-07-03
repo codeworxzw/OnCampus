@@ -1,22 +1,19 @@
 package com.devon_dickson.apps.orgspace;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListAdapter;
-import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.Toast;
 
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -32,11 +29,13 @@ import java.util.Locale;
 /**
  * Created by Edwin on 15/02/2015.
  */
-
-
 public class Tab1 extends Fragment {
+    //RecyclerView
+    private RecyclerView mRecyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
 
-
+    //ProgressDialog
     private ProgressDialog pDialog;
 
     // URL to get contacts JSON
@@ -50,32 +49,40 @@ public class Tab1 extends Fragment {
     private static final String TAG_ORG = "Org";
     private static final String TAG_TIME = "Time";
     private static final String TAG_RSVP = "RSVP";
-    private ListView lv;
 
-    // contacts JSONArray
+    // events JSONArray
     JSONArray events = null;
+    private List<Event> eventlist;
+    private RecyclerView rv;
 
     // Hashmap for ListView
-    ArrayList<HashMap<String, String>> eventList;
+    //ArrayList<HashMap<String, String>> eventList;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.tab_1, container, false);
+        View v =inflater.inflate(R.layout.tab_2,container,false);
 
-        //new eventDownload().execute();
-        eventList = new ArrayList<HashMap<String, String>>();
+        //eventList = new ArrayList<HashMap<String, String>>();
 
-        //lv = (ListView) getView().findViewById(R.id.eventList);
+
         // Calling async task to get json
-        new GetContacts().execute();
+        new GetEvents().execute();
 
         return v;
     }
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        lv = (ListView) getView().findViewById(R.id.eventList);
+        mRecyclerView = (RecyclerView) getView().findViewById(R.id.my_recycler_view);
+        mRecyclerView.setHasFixedSize(true);
+        mLayoutManager = new LinearLayoutManager(getActivity());
+        mRecyclerView.setLayoutManager(mLayoutManager);
+
+        /*******************************************************************************************
+         * mAdapter = new MyAdapter(myDataset);
+         * mRecyclerView.setAdapter(myAdapter);
+         ******************************************************************************************/
     }
 
-    private class GetContacts extends AsyncTask<Void, Void, Void> {
+    private class GetEvents extends AsyncTask<Void, Void, Void> {
 
         @Override
         protected void onPreExecute() {
@@ -100,12 +107,13 @@ public class Tab1 extends Fragment {
 
             if (jsonStr != null) {
                 try {
+                    eventlist = new ArrayList<>();
                     JSONObject jsonObj = new JSONObject(jsonStr);
 
                     // Getting JSON Array node
                     events = jsonObj.getJSONArray(TAG_EVENT);
 
-                    // looping through All Contacts
+                    // looping through All Events
                     for (int i = 0; i < events.length(); i++) {
                         JSONObject c = events.getJSONObject(i);
 
@@ -126,19 +134,22 @@ public class Tab1 extends Fragment {
 
                         String rsvp = c.getString(TAG_RSVP);
 
-                        // tmp hashmap for single contact
-                        HashMap<String, String> event = new HashMap<String, String>();
+                        // tmp hashmap for single event
+                        // HashMap<String, String> event = new HashMap<String, String>();
 
                         // adding each child node to HashMap key => value
-                        event.put(TAG_EVENTNAME, eventName);
-                        event.put(TAG_LOCATION, location);
-                        event.put(TAG_RAINLOCATION, rain);
-                        event.put(TAG_ORG, org);
-                        event.put(TAG_TIME, time.toUpperCase());
-                        event.put(TAG_RSVP, rsvp);
+                        //event.put(TAG_EVENTNAME, eventName);
+                        //event.put(TAG_LOCATION, location);
+                        //event.put(TAG_RAINLOCATION, rain);
+                        // event.put(TAG_ORG, org);
+                        //event.put(TAG_TIME, time.toUpperCase());
+                        //event.put(TAG_RSVP, rsvp);
 
-                        // adding contact to contact list
-                        eventList.add(event);
+                        // adding event to the eventList ArrayList<HashMap>
+                        //eventList.add(event);
+
+
+                        eventlist.add(new Event(eventName, time.toUpperCase(), location, R.drawable.pace));
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -156,17 +167,10 @@ public class Tab1 extends Fragment {
             // Dismiss the progress dialog
             if (pDialog.isShowing())
                 pDialog.dismiss();
-            /**
-             * Updating parsed JSON data into ListView
-             * */
-            ListAdapter adapter = new SimpleAdapter(
-                    getActivity(), eventList,
-                    R.layout.event_row, new String[] { TAG_EVENTNAME, TAG_LOCATION, TAG_TIME, TAG_ORG }, new int[] { R.id.eventName,
-                    R.id.eventLocation, R.id.eventTime });
 
-            lv.setAdapter(adapter);
+            RVAdapter adapter = new RVAdapter(eventlist);
+            mRecyclerView.setAdapter(adapter);
         }
 
     }
-
 }

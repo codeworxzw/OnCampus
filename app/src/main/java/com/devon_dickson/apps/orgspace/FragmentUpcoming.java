@@ -13,7 +13,7 @@ public class FragmentUpcoming extends Fragment {
     ViewPager pager;
     ViewPagerAdapter adapter;
     SlidingTabLayout tabs;
-    CharSequence Titles[]={"Home","Events"};
+    CharSequence Titles[]={"Upcoming Events","Attending"};
     int Numboftabs =2;
     private FragmentTabHost tabHost;
     @Override
