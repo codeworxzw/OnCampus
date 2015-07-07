@@ -1,6 +1,7 @@
 package com.devon_dickson.apps.orgspace;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -30,6 +31,7 @@ import java.util.Locale;
  * Created by Edwin on 15/02/2015.
  */
 public class Tab1 extends Fragment {
+    Context mContext;
     //RecyclerView
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -172,5 +174,10 @@ public class Tab1 extends Fragment {
             mRecyclerView.setAdapter(adapter);
         }
 
+    }
+
+
+    public Context getContext() {
+        return getActivity();
     }
 }
