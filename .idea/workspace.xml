@@ -46,20 +46,8 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f3a6565-7094-4599-93a5-ec658f8d60e2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/recyclerview_v7_22_0_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/devon_dickson/apps/orgspace/AndroidDatabaseManager.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/devon_dickson/apps/orgspace/AndroidDatabaseManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/devon_dickson/apps/orgspace/DatabaseHelper.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/devon_dickson/apps/orgspace/DatabaseHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/devon_dickson/apps/orgspace/Event.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/devon_dickson/apps/orgspace/Event.java" />
+    <list default="true" id="2f3a6565-7094-4599-93a5-ec658f8d60e2" name="Default" comment="FIxed so many fuck ups its unreal">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/devon_dickson/apps/orgspace/EventsDataSource.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/devon_dickson/apps/orgspace/EventsDataSource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/devon_dickson/apps/orgspace/MyAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/devon_dickson/apps/orgspace/MyAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OrgSpace.iml" afterPath="$PROJECT_DIR$/OrgSpace.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/devon_dickson/apps/orgspace/Tab1.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/devon_dickson/apps/orgspace/Tab1.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.gradle" afterPath="$PROJECT_DIR$/settings.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="OrgSpace.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -161,8 +149,8 @@
       <file leaf-file-name="EventsDataSource.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/devon_dickson/apps/orgspace/EventsDataSource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44695258">
-              <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.4085779">
+              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -191,6 +179,11 @@
     </leaf>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Devon Dickson &lt;ddickson1@plymouth.edu&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
@@ -1660,13 +1653,13 @@
       <list>
         <option value="$PROJECT_DIR$/app/src/main/java/com/devon_dickson/apps/orgspace/AndroidDatabaseManager.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/devon_dickson/apps/orgspace/Event.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/devon_dickson/apps/orgspace/EventsDataSource.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/devon_dickson/apps/orgspace/DatabaseHelper.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/devon_dickson/apps/orgspace/MyAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/devon_dickson/apps/orgspace/Tab1.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/devon_dickson/apps/orgspace/FragmentUpcoming.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_upcoming.xml" />
         <option value="$PROJECT_DIR$/settings.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/devon_dickson/apps/orgspace/EventsDataSource.java" />
       </list>
     </option>
   </component>
@@ -1719,6 +1712,42 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="OrgSpace" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OrgSpace" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OrgSpace" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="orgspace" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -1906,6 +1935,13 @@
       <option name="number" value="Default" />
       <updated>1455302079001</updated>
     </task>
+    <task id="LOCAL-00001" summary="FIxed so many fuck ups its unreal">
+      <created>1455567971664</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1455567971664</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1919,7 +1955,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="1" width="1438" height="858" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.49709725" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.15384616" order="7" side_tool="false" content_ui="tabs" />
@@ -1938,7 +1974,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5058055" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2525399" sideWeight="0.84076434" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2525399" sideWeight="0.84076434" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.49419448" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1966,7 +2002,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Began implementation of internal SQLite database for storing list of upcoming events. \&#10;&#10;Currently hung up on 2 SQL exceptions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Began implementation of internal SQLite database for storing list of upcoming events. \&#10;&#10;Currently hung up on 2 SQL exceptions" />
+    <MESSAGE value="FIxed so many fuck ups its unreal" />
+    <option name="LAST_COMMIT_MESSAGE" value="FIxed so many fuck ups its unreal" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -2385,8 +2422,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/devon_dickson/apps/orgspace/EventsDataSource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44695258">
-          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.4085779">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
           <folding />
         </state>
       </provider>
