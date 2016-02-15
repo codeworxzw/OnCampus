@@ -1,6 +1,21 @@
 package com.devon_dickson.apps.orgspace;
 
 /**
+<<<<<<< HEAD
+ * Created by devon on 7/3/2015.
+ */
+class Event {
+    String name;
+    String location;
+    String time;
+    int orgPhoto;
+
+    Event(String name, String time, String location, int orgPhoto) {
+        this.name = name;
+        this.time = time;
+        this.location = location;
+        this.orgPhoto = orgPhoto;
+=======
  * Created by ddickson1 on 2/5/2016.
  */
 public class Event {
@@ -81,5 +96,6 @@ public class Event {
 
     public void setRsvp(String rsvp) {
         this.rsvp = rsvp;
+>>>>>>> master
     }
 }

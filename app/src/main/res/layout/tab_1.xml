@@ -18,5 +18,8 @@
         android:layout_alignParentEnd="false"
         android:layout_alignParentStart="false"
         android:dividerHeight="10dp"
-        android:layout_marginTop="10dp" />
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:divider="@drawable/abc_dialog_material_background_light" />
 </RelativeLayout>
