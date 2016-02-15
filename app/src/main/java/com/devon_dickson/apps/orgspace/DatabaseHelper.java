@@ -27,7 +27,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "orgspace.db";
     private static final int DATABASE_VERSION = 1;
 
-    // Database creation sql statement
+    // Create the DB
     private static final String DATABASE_CREATE = "create table " + TABLE_NAME + "("
             + COLUMN_ID + " integer primary key, "
             + COLUMN_NAME + " text not null, "
@@ -56,6 +56,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     //To Debug Database in app
+    //Experimental
+    //From https://github.com/sanathp/DatabaseManager_For_Android
 
     public ArrayList<Cursor> getData(String Query){
         //get writable database

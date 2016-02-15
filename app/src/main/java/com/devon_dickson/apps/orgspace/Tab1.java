@@ -31,7 +31,7 @@ import java.util.List;
 import java.util.Locale;
 
 /**
- * Created by Edwin on 15/02/2015.
+ * Created by ddickson1 on 1/02/2016.
  */
 
 
@@ -50,10 +50,8 @@ public class Tab1 extends Fragment {
     private static final String TAG_LOCATION = "Location";
     private static final String TAG_RAINLOCATION = "Rain Location";
     private static final String TAG_ORG = "Org";
-    private static final String TAG_DATE = "Date";
     private static final String TAG_TIME = "Time";
     private static final String TAG_RSVP = "RSVP";
-    private static final String TAG_CREATED = "Created At";
     private ListView lv;
     private SimpleAdapter adapter;
     private List<Event> values;
