@@ -1,6 +1,5 @@
 package com.devon_dickson.apps.orgspace;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.support.v4.app.Fragment;
@@ -39,7 +38,6 @@ public class MainActivity extends ActionBarActivity {
     //First We Declare Titles And Icons For Our Navigation Drawer List View
     //This Icons And Titles Are holded in an Array as you can see
 
-    public static Context mContext;
     String TITLES[] = {"Home","Calendar","Check-In","Settings",};
     int ICONS[] = {R.drawable.ic_action_home,R.drawable.ic_action_calendar,R.drawable.ic_action_checkin,R.drawable.ic_action_settings};
     ViewPager pager;
@@ -206,7 +204,5 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void eventInfo(String title) {
-        Toast.makeText(getApplicationContext() ,title, Toast.LENGTH_SHORT).show();
-    }
+
 }
