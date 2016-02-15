@@ -58,7 +58,6 @@ public class Tab1 extends Fragment {
     private SimpleAdapter adapter;
     private List<Event> values;
     private ArrayList<HashMap<String, String>> valuesMap;
-    private EventsDataSource datasource;
     // contacts JSONArray
     JSONArray events = null;
     private ArrayList<Event> listOfEvents = new ArrayList<Event>();
@@ -84,8 +83,6 @@ public class Tab1 extends Fragment {
         // use the SimpleCursorAdapter to show the
         // elements in a ListView
 
-        downloadEvents(lv);
-
 
         if(valuesMap==null) {
             valuesMap.add(0, new HashMap<String, String>());
@@ -99,31 +96,7 @@ public class Tab1 extends Fragment {
         lv.setAdapter(adapter);
     }
 
-    private ArrayList<HashMap<String, String>> downloadEvents(ListView lv) {
-        //For SQLite DB*******************************
-        datasource = new EventsDataSource(getActivity());
-        datasource.open();
-        values = datasource.getAllEvents();
-        if(values!=null) {
-            for(int i = 0; i < values.size(); i++) {
-                HashMap<String, String> eventMap = new HashMap<String, String>();
 
-                // adding each child node to HashMap key => value
-                eventMap.put(TAG_ID, Integer.toString(values.get(i).getId()));
-                eventMap.put(TAG_EVENTNAME, values.get(i).getName());
-                eventMap.put(TAG_LOCATION, values.get(i).getLocation());
-                eventMap.put(TAG_RAINLOCATION, values.get(i).getRain());
-                eventMap.put(TAG_ORG, values.get(i).getOrg());
-                eventMap.put(TAG_TIME, values.get(i).getTime().toUpperCase());
-                eventMap.put(TAG_RSVP, values.get(i).getRsvp());
-
-                // adding contact to contact list
-                valuesMap.add(eventMap);
-            }
-        }
-        //******************************************
-        return valuesMap;
-    }
 
     private class GetContacts extends AsyncTask<Void, Void, Void> {
 
@@ -190,7 +163,6 @@ public class Tab1 extends Fragment {
 
                         // adding contact to contact list
                         eventList.add(event);
-                        Event eventTest = datasource.addEvent(eventID, eventName, location, rain, org, time.toUpperCase(), rsvp);
                         adapter.notifyDataSetChanged();
                     }
 
