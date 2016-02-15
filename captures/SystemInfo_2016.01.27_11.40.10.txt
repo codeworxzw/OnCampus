@@ -1,0 +1,656 @@
+TASK com.devon_dickson.apps.orgspace id=82
+  ACTIVITY com.devon_dickson.apps.orgspace/.MainActivity 1b5ddc37 pid=4882
+    Local FragmentActivity 3a560cb7 State:
+      mCreated=truemResumed=true mStopped=false mReallyStopped=false
+      mLoadersStarted=true
+    Active Fragments in 8f05520:
+      #0: FragmentUpcoming{3f042ed9 #0 id=0x7f0d0071}
+        mFragmentId=#7f0d0071 mContainerId=#7f0d0071 mTag=null
+        mState=1 mIndex=0 mWho=android:fragment:0 mBackStackNesting=1
+        mAdded=false mRemoving=true mResumed=false mFromLayout=false mInLayout=false
+        mHidden=false mDetached=false mMenuVisible=true mHasMenu=false
+        mRetainInstance=false mRetaining=false mUserVisibleHint=true
+        mFragmentManager=FragmentManager{8f05520 in MainActivity{3a560cb7}}
+        mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+        mSavedViewState={2131558524=HorizontalScrollView.SavedState{2fe4409e scrollPosition=0 isLayoutRtl=false}, 2131558525=FragmentPager.SavedState{813d77f position=0}}
+        Child FragmentManager{2755a34c in FragmentUpcoming{3f042ed9}}:
+          Active Fragments in 2755a34c:
+            #0: Tab1{2fffdf95 #0 id=0x7f0d007d}
+              mFragmentId=#7f0d007d mContainerId=#7f0d007d mTag=null
+              mState=1 mIndex=0 mWho=android:fragment:0:0 mBackStackNesting=0
+              mAdded=true mRemoving=false mResumed=false mFromLayout=false mInLayout=false
+              mHidden=false mDetached=false mMenuVisible=true mHasMenu=false
+              mRetainInstance=false mRetaining=false mUserVisibleHint=true
+              mFragmentManager=FragmentManager{2755a34c in FragmentUpcoming{3f042ed9}}
+              mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+              mParentFragment=FragmentUpcoming{3f042ed9 #0 id=0x7f0d0071}
+              mSavedViewState={2131558555=AbsListView.SavedState{284fc8aa selectedId=-9223372036854775808 firstId=-1 viewTop=0 position=0 height=900 filter=null checkState=null}}
+              Child FragmentManager{16986c9b in Tab1{2fffdf95}}:
+                FragmentManager misc state:
+                  mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+                  mContainer=android.support.v4.app.Fragment$1@2adfa838
+                  mParent=Tab1{2fffdf95 #0 id=0x7f0d007d}
+                  mCurState=1 mStateSaved=true mDestroyed=false
+            #1: Tab2{39cbe011 #1 id=0x7f0d007d}
+              mFragmentId=#7f0d007d mContainerId=#7f0d007d mTag=null
+              mState=1 mIndex=1 mWho=android:fragment:0:1 mBackStackNesting=0
+              mAdded=true mRemoving=false mResumed=false mFromLayout=false mInLayout=false
+              mHidden=false mDetached=false mMenuVisible=false mHasMenu=false
+              mRetainInstance=false mRetaining=false mUserVisibleHint=false
+              mFragmentManager=FragmentManager{2755a34c in FragmentUpcoming{3f042ed9}}
+              mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+              mParentFragment=FragmentUpcoming{3f042ed9 #0 id=0x7f0d0071}
+              mSavedViewState={2131558510=android.view.AbsSavedState$1@1839c576}
+              Child FragmentManager{1a073777 in Tab2{39cbe011}}:
+                FragmentManager misc state:
+                  mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+                  mContainer=android.support.v4.app.Fragment$1@25030fe4
+                  mParent=Tab2{39cbe011 #1 id=0x7f0d007d}
+                  mCurState=1 mStateSaved=true mDestroyed=false
+          Added Fragments:
+            #0: Tab1{2fffdf95 #0 id=0x7f0d007d}
+            #1: Tab2{39cbe011 #1 id=0x7f0d007d}
+          FragmentManager misc state:
+            mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+            mContainer=android.support.v4.app.Fragment$1@1f7d6c4d
+            mParent=FragmentUpcoming{3f042ed9 #0 id=0x7f0d0071}
+            mCurState=1 mStateSaved=true mDestroyed=false
+      #1: FragmentUpcoming{2ff4c302 #1 id=0x7f0d0071}
+        mFragmentId=#7f0d0071 mContainerId=#7f0d0071 mTag=null
+        mState=1 mIndex=1 mWho=android:fragment:1 mBackStackNesting=2
+        mAdded=false mRemoving=true mResumed=false mFromLayout=false mInLayout=false
+        mHidden=false mDetached=false mMenuVisible=true mHasMenu=false
+        mRetainInstance=false mRetaining=false mUserVisibleHint=true
+        mFragmentManager=FragmentManager{8f05520 in MainActivity{3a560cb7}}
+        mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+        mSavedViewState={2131558524=HorizontalScrollView.SavedState{142dd413 scrollPosition=0 isLayoutRtl=false}, 2131558525=FragmentPager.SavedState{27d34650 position=0}}
+        Child FragmentManager{6418049 in FragmentUpcoming{2ff4c302}}:
+          Active Fragments in 6418049:
+            #0: Tab1{20700d4e #0 id=0x7f0d007d}
+              mFragmentId=#7f0d007d mContainerId=#7f0d007d mTag=null
+              mState=1 mIndex=0 mWho=android:fragment:1:0 mBackStackNesting=0
+              mAdded=true mRemoving=false mResumed=false mFromLayout=false mInLayout=false
+              mHidden=false mDetached=false mMenuVisible=true mHasMenu=false
+              mRetainInstance=false mRetaining=false mUserVisibleHint=true
+              mFragmentManager=FragmentManager{6418049 in FragmentUpcoming{2ff4c302}}
+              mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+              mParentFragment=FragmentUpcoming{2ff4c302 #1 id=0x7f0d0071}
+              mSavedViewState={2131558555=AbsListView.SavedState{c179e6f selectedId=-9223372036854775808 firstId=-1 viewTop=0 position=0 height=900 filter=null checkState=null}}
+              Child FragmentManager{112e777c in Tab1{20700d4e}}:
+                FragmentManager misc state:
+                  mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+                  mContainer=android.support.v4.app.Fragment$1@1f18d805
+                  mParent=Tab1{20700d4e #0 id=0x7f0d007d}
+                  mCurState=1 mStateSaved=true mDestroyed=false
+            #1: Tab2{2843b05a #1 id=0x7f0d007d}
+              mFragmentId=#7f0d007d mContainerId=#7f0d007d mTag=null
+              mState=1 mIndex=1 mWho=android:fragment:1:1 mBackStackNesting=0
+              mAdded=true mRemoving=false mResumed=false mFromLayout=false mInLayout=false
+              mHidden=false mDetached=false mMenuVisible=false mHasMenu=false
+              mRetainInstance=false mRetaining=false mUserVisibleHint=false
+              mFragmentManager=FragmentManager{6418049 in FragmentUpcoming{2ff4c302}}
+              mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+              mParentFragment=FragmentUpcoming{2ff4c302 #1 id=0x7f0d0071}
+              mSavedViewState={2131558510=android.view.AbsSavedState$1@1839c576}
+              Child FragmentManager{429b28b in Tab2{2843b05a}}:
+                FragmentManager misc state:
+                  mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+                  mContainer=android.support.v4.app.Fragment$1@1ca98f68
+                  mParent=Tab2{2843b05a #1 id=0x7f0d007d}
+                  mCurState=1 mStateSaved=true mDestroyed=false
+          Added Fragments:
+            #0: Tab1{20700d4e #0 id=0x7f0d007d}
+            #1: Tab2{2843b05a #1 id=0x7f0d007d}
+          FragmentManager misc state:
+            mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+            mContainer=android.support.v4.app.Fragment$1@3053ef81
+            mParent=FragmentUpcoming{2ff4c302 #1 id=0x7f0d0071}
+            mCurState=1 mStateSaved=true mDestroyed=false
+      #2: FragmentUpcoming{257c7826 #2 id=0x7f0d0071}
+        mFragmentId=#7f0d0071 mContainerId=#7f0d0071 mTag=null
+        mState=1 mIndex=2 mWho=android:fragment:2 mBackStackNesting=2
+        mAdded=false mRemoving=true mResumed=false mFromLayout=false mInLayout=false
+        mHidden=false mDetached=false mMenuVisible=true mHasMenu=false
+        mRetainInstance=false mRetaining=false mUserVisibleHint=true
+        mFragmentManager=FragmentManager{8f05520 in MainActivity{3a560cb7}}
+        mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+        mSavedViewState={2131558524=HorizontalScrollView.SavedState{35feec67 scrollPosition=0 isLayoutRtl=false}, 2131558525=FragmentPager.SavedState{283c3a14 position=0}}
+        Child FragmentManager{3acf02bd in FragmentUpcoming{257c7826}}:
+          Active Fragments in 3acf02bd:
+            #0: Tab1{3827f0b2 #0 id=0x7f0d007d}
+              mFragmentId=#7f0d007d mContainerId=#7f0d007d mTag=null
+              mState=1 mIndex=0 mWho=android:fragment:2:0 mBackStackNesting=0
+              mAdded=true mRemoving=false mResumed=false mFromLayout=false mInLayout=false
+              mHidden=false mDetached=false mMenuVisible=true mHasMenu=false
+              mRetainInstance=false mRetaining=false mUserVisibleHint=true
+              mFragmentManager=FragmentManager{3acf02bd in FragmentUpcoming{257c7826}}
+              mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+              mParentFragment=FragmentUpcoming{257c7826 #2 id=0x7f0d0071}
+              mSavedViewState={2131558555=AbsListView.SavedState{3003e803 selectedId=-9223372036854775808 firstId=-1 viewTop=0 position=0 height=900 filter=null checkState=null}}
+              Child FragmentManager{17ace380 in Tab1{3827f0b2}}:
+                FragmentManager misc state:
+                  mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+                  mContainer=android.support.v4.app.Fragment$1@36ee0db9
+                  mParent=Tab1{3827f0b2 #0 id=0x7f0d007d}
+                  mCurState=1 mStateSaved=true mDestroyed=false
+            #1: Tab2{1a065fe #1 id=0x7f0d007d}
+              mFragmentId=#7f0d007d mContainerId=#7f0d007d mTag=null
+              mState=1 mIndex=1 mWho=android:fragment:2:1 mBackStackNesting=0
+              mAdded=true mRemoving=false mResumed=false mFromLayout=false mInLayout=false
+              mHidden=false mDetached=false mMenuVisible=false mHasMenu=false
+              mRetainInstance=false mRetaining=false mUserVisibleHint=false
+              mFragmentManager=FragmentManager{3acf02bd in FragmentUpcoming{257c7826}}
+              mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+              mParentFragment=FragmentUpcoming{257c7826 #2 id=0x7f0d0071}
+              mSavedViewState={2131558510=android.view.AbsSavedState$1@1839c576}
+              Child FragmentManager{30d3015f in Tab2{1a065fe}}:
+                FragmentManager misc state:
+                  mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+                  mContainer=android.support.v4.app.Fragment$1@2bcb7ac
+                  mParent=Tab2{1a065fe #1 id=0x7f0d007d}
+                  mCurState=1 mStateSaved=true mDestroyed=false
+          Added Fragments:
+            #0: Tab1{3827f0b2 #0 id=0x7f0d007d}
+            #1: Tab2{1a065fe #1 id=0x7f0d007d}
+          FragmentManager misc state:
+            mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+            mContainer=android.support.v4.app.Fragment$1@2558cc75
+            mParent=FragmentUpcoming{257c7826 #2 id=0x7f0d0071}
+            mCurState=1 mStateSaved=true mDestroyed=false
+      #3: FragmentUpcoming{c98e40a #3 id=0x7f0d0071}
+        mFragmentId=#7f0d0071 mContainerId=#7f0d0071 mTag=null
+        mState=1 mIndex=3 mWho=android:fragment:3 mBackStackNesting=2
+        mAdded=false mRemoving=true mResumed=false mFromLayout=false mInLayout=false
+        mHidden=false mDetached=false mMenuVisible=true mHasMenu=false
+        mRetainInstance=false mRetaining=false mUserVisibleHint=true
+        mFragmentManager=FragmentManager{8f05520 in MainActivity{3a560cb7}}
+        mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+        mSavedViewState={2131558524=HorizontalScrollView.SavedState{1c50547b scrollPosition=0 isLayoutRtl=false}, 2131558525=FragmentPager.SavedState{1a13a298 position=0}}
+        Child FragmentManager{2f76baf1 in FragmentUpcoming{c98e40a}}:
+          Active Fragments in 2f76baf1:
+            #0: Tab1{29e936d6 #0 id=0x7f0d007d}
+              mFragmentId=#7f0d007d mContainerId=#7f0d007d mTag=null
+              mState=1 mIndex=0 mWho=android:fragment:3:0 mBackStackNesting=0
+              mAdded=true mRemoving=false mResumed=false mFromLayout=false mInLayout=false
+              mHidden=false mDetached=false mMenuVisible=true mHasMenu=false
+              mRetainInstance=false mRetaining=false mUserVisibleHint=true
+              mFragmentManager=FragmentManager{2f76baf1 in FragmentUpcoming{c98e40a}}
+              mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+              mParentFragment=FragmentUpcoming{c98e40a #3 id=0x7f0d0071}
+              mSavedViewState={2131558555=AbsListView.SavedState{2685bd57 selectedId=-9223372036854775808 firstId=-1 viewTop=0 position=0 height=900 filter=null checkState=null}}
+              Child FragmentManager{2eec5044 in Tab1{29e936d6}}:
+                FragmentManager misc state:
+                  mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+                  mContainer=android.support.v4.app.Fragment$1@13ab152d
+                  mParent=Tab1{29e936d6 #0 id=0x7f0d007d}
+                  mCurState=1 mStateSaved=true mDestroyed=false
+            #1: Tab2{e19ea62 #1 id=0x7f0d007d}
+              mFragmentId=#7f0d007d mContainerId=#7f0d007d mTag=null
+              mState=1 mIndex=1 mWho=android:fragment:3:1 mBackStackNesting=0
+              mAdded=true mRemoving=false mResumed=false mFromLayout=false mInLayout=false
+              mHidden=false mDetached=false mMenuVisible=false mHasMenu=false
+              mRetainInstance=false mRetaining=false mUserVisibleHint=false
+              mFragmentManager=FragmentManager{2f76baf1 in FragmentUpcoming{c98e40a}}
+              mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+              mParentFragment=FragmentUpcoming{c98e40a #3 id=0x7f0d0071}
+              mSavedViewState={2131558510=android.view.AbsSavedState$1@1839c576}
+              Child FragmentManager{103ed7f3 in Tab2{e19ea62}}:
+                FragmentManager misc state:
+                  mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+                  mContainer=android.support.v4.app.Fragment$1@9802cb0
+                  mParent=Tab2{e19ea62 #1 id=0x7f0d007d}
+                  mCurState=1 mStateSaved=true mDestroyed=false
+          Added Fragments:
+            #0: Tab1{29e936d6 #0 id=0x7f0d007d}
+            #1: Tab2{e19ea62 #1 id=0x7f0d007d}
+          FragmentManager misc state:
+            mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+            mContainer=android.support.v4.app.Fragment$1@1950d729
+            mParent=FragmentUpcoming{c98e40a #3 id=0x7f0d0071}
+            mCurState=1 mStateSaved=true mDestroyed=false
+      #4: FragmentUpcoming{3bb04aae #4 id=0x7f0d0071}
+        mFragmentId=#7f0d0071 mContainerId=#7f0d0071 mTag=null
+        mState=1 mIndex=4 mWho=android:fragment:4 mBackStackNesting=2
+        mAdded=false mRemoving=true mResumed=false mFromLayout=false mInLayout=false
+        mHidden=false mDetached=false mMenuVisible=true mHasMenu=false
+        mRetainInstance=false mRetaining=false mUserVisibleHint=true
+        mFragmentManager=FragmentManager{8f05520 in MainActivity{3a560cb7}}
+        mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+        mSavedViewState={2131558524=HorizontalScrollView.SavedState{1165004f scrollPosition=0 isLayoutRtl=false}, 2131558525=FragmentPager.SavedState{3a3363dc position=0}}
+        Child FragmentManager{876bce5 in FragmentUpcoming{3bb04aae}}:
+          Active Fragments in 876bce5:
+            #0: Tab1{63a63ba #0 id=0x7f0d007d}
+              mFragmentId=#7f0d007d mContainerId=#7f0d007d mTag=null
+              mState=1 mIndex=0 mWho=android:fragment:4:0 mBackStackNesting=0
+              mAdded=true mRemoving=false mResumed=false mFromLayout=false mInLayout=false
+              mHidden=false mDetached=false mMenuVisible=true mHasMenu=false
+              mRetainInstance=false mRetaining=false mUserVisibleHint=true
+              mFragmentManager=FragmentManager{876bce5 in FragmentUpcoming{3bb04aae}}
+              mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+              mParentFragment=FragmentUpcoming{3bb04aae #4 id=0x7f0d0071}
+              mSavedViewState={2131558555=AbsListView.SavedState{d1b526b selectedId=-9223372036854775808 firstId=-1 viewTop=0 position=0 height=900 filter=null checkState=null}}
+              Child FragmentManager{1180e1c8 in Tab1{63a63ba}}:
+                FragmentManager misc state:
+                  mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+                  mContainer=android.support.v4.app.Fragment$1@215b4261
+                  mParent=Tab1{63a63ba #0 id=0x7f0d007d}
+                  mCurState=1 mStateSaved=true mDestroyed=false
+            #1: Tab2{3a1b0186 #1 id=0x7f0d007d}
+              mFragmentId=#7f0d007d mContainerId=#7f0d007d mTag=null
+              mState=1 mIndex=1 mWho=android:fragment:4:1 mBackStackNesting=0
+              mAdded=true mRemoving=false mResumed=false mFromLayout=false mInLayout=false
+              mHidden=false mDetached=false mMenuVisible=false mHasMenu=false
+              mRetainInstance=false mRetaining=false mUserVisibleHint=false
+              mFragmentManager=FragmentManager{876bce5 in FragmentUpcoming{3bb04aae}}
+              mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+              mParentFragment=FragmentUpcoming{3bb04aae #4 id=0x7f0d0071}
+              mSavedViewState={2131558510=android.view.AbsSavedState$1@1839c576}
+              Child FragmentManager{2b9aaa47 in Tab2{3a1b0186}}:
+                FragmentManager misc state:
+                  mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+                  mContainer=android.support.v4.app.Fragment$1@2aa65274
+                  mParent=Tab2{3a1b0186 #1 id=0x7f0d007d}
+                  mCurState=1 mStateSaved=true mDestroyed=false
+          Added Fragments:
+            #0: Tab1{63a63ba #0 id=0x7f0d007d}
+            #1: Tab2{3a1b0186 #1 id=0x7f0d007d}
+          FragmentManager misc state:
+            mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+            mContainer=android.support.v4.app.Fragment$1@fa8a39d
+            mParent=FragmentUpcoming{3bb04aae #4 id=0x7f0d0071}
+            mCurState=1 mStateSaved=true mDestroyed=false
+      #5: FragmentUpcoming{3515b012 #5 id=0x7f0d0071}
+        mFragmentId=#7f0d0071 mContainerId=#7f0d0071 mTag=null
+        mState=1 mIndex=5 mWho=android:fragment:5 mBackStackNesting=2
+        mAdded=false mRemoving=true mResumed=false mFromLayout=false mInLayout=false
+        mHidden=false mDetached=false mMenuVisible=true mHasMenu=false
+        mRetainInstance=false mRetaining=false mUserVisibleHint=true
+        mFragmentManager=FragmentManager{8f05520 in MainActivity{3a560cb7}}
+        mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+        mSavedViewState={2131558524=HorizontalScrollView.SavedState{35cda3e3 scrollPosition=0 isLayoutRtl=false}, 2131558525=FragmentPager.SavedState{351021e0 position=0}}
+        Child FragmentManager{1570dc99 in FragmentUpcoming{3515b012}}:
+          Active Fragments in 1570dc99:
+            #0: Tab1{3b9abb5e #0 id=0x7f0d007d}
+              mFragmentId=#7f0d007d mContainerId=#7f0d007d mTag=null
+              mState=1 mIndex=0 mWho=android:fragment:5:0 mBackStackNesting=0
+              mAdded=true mRemoving=false mResumed=false mFromLayout=false mInLayout=false
+              mHidden=false mDetached=false mMenuVisible=true mHasMenu=false
+              mRetainInstance=false mRetaining=false mUserVisibleHint=true
+              mFragmentManager=FragmentManager{1570dc99 in FragmentUpcoming{3515b012}}
+              mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+              mParentFragment=FragmentUpcoming{3515b012 #5 id=0x7f0d0071}
+              mSavedViewState={2131558555=AbsListView.SavedState{eac9b3f selectedId=-9223372036854775808 firstId=-1 viewTop=0 position=0 height=900 filter=null checkState=null}}
+              Child FragmentManager{28857c0c in Tab1{3b9abb5e}}:
+                FragmentManager misc state:
+                  mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+                  mContainer=android.support.v4.app.Fragment$1@29e9a955
+                  mParent=Tab1{3b9abb5e #0 id=0x7f0d007d}
+                  mCurState=1 mStateSaved=true mDestroyed=false
+            #1: Tab2{16d32f6a #1 id=0x7f0d007d}
+              mFragmentId=#7f0d007d mContainerId=#7f0d007d mTag=null
+              mState=1 mIndex=1 mWho=android:fragment:5:1 mBackStackNesting=0
+              mAdded=true mRemoving=false mResumed=false mFromLayout=false mInLayout=false
+              mHidden=false mDetached=false mMenuVisible=false mHasMenu=false
+              mRetainInstance=false mRetaining=false mUserVisibleHint=false
+              mFragmentManager=FragmentManager{1570dc99 in FragmentUpcoming{3515b012}}
+              mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+              mParentFragment=FragmentUpcoming{3515b012 #5 id=0x7f0d0071}
+              mSavedViewState={2131558510=android.view.AbsSavedState$1@1839c576}
+              Child FragmentManager{2659ac5b in Tab2{16d32f6a}}:
+                FragmentManager misc state:
+                  mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+                  mContainer=android.support.v4.app.Fragment$1@10144cf8
+                  mParent=Tab2{16d32f6a #1 id=0x7f0d007d}
+                  mCurState=1 mStateSaved=true mDestroyed=false
+          Added Fragments:
+            #0: Tab1{3b9abb5e #0 id=0x7f0d007d}
+            #1: Tab2{16d32f6a #1 id=0x7f0d007d}
+          FragmentManager misc state:
+            mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+            mContainer=android.support.v4.app.Fragment$1@7e885d1
+            mParent=FragmentUpcoming{3515b012 #5 id=0x7f0d0071}
+            mCurState=1 mStateSaved=true mDestroyed=false
+      #6: FragmentUpcoming{76cd836 #6 id=0x7f0d0071}
+        mFragmentId=#7f0d0071 mContainerId=#7f0d0071 mTag=null
+        mState=1 mIndex=6 mWho=android:fragment:6 mBackStackNesting=2
+        mAdded=false mRemoving=true mResumed=false mFromLayout=false mInLayout=false
+        mHidden=false mDetached=false mMenuVisible=true mHasMenu=false
+        mRetainInstance=false mRetaining=false mUserVisibleHint=true
+        mFragmentManager=FragmentManager{8f05520 in MainActivity{3a560cb7}}
+        mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+        mSavedViewState={2131558524=HorizontalScrollView.SavedState{2fcb337 scrollPosition=0 isLayoutRtl=false}, 2131558525=FragmentPager.SavedState{17bd40a4 position=0}}
+        Child FragmentManager{281eae0d in FragmentUpcoming{76cd836}}:
+          Active Fragments in 281eae0d:
+            #0: Tab1{192641c2 #0 id=0x7f0d007d}
+              mFragmentId=#7f0d007d mContainerId=#7f0d007d mTag=null
+              mState=1 mIndex=0 mWho=android:fragment:6:0 mBackStackNesting=0
+              mAdded=true mRemoving=false mResumed=false mFromLayout=false mInLayout=false
+              mHidden=false mDetached=false mMenuVisible=true mHasMenu=false
+              mRetainInstance=false mRetaining=false mUserVisibleHint=true
+              mFragmentManager=FragmentManager{281eae0d in FragmentUpcoming{76cd836}}
+              mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+              mParentFragment=FragmentUpcoming{76cd836 #6 id=0x7f0d0071}
+              mSavedViewState={2131558555=AbsListView.SavedState{3b5f4bd3 selectedId=-9223372036854775808 firstId=-1 viewTop=0 position=0 height=900 filter=null checkState=null}}
+              Child FragmentManager{8dfc310 in Tab1{192641c2}}:
+                FragmentManager misc state:
+                  mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+                  mContainer=android.support.v4.app.Fragment$1@23151e09
+                  mParent=Tab1{192641c2 #0 id=0x7f0d007d}
+                  mCurState=1 mStateSaved=true mDestroyed=false
+            #1: Tab2{231ab80e #1 id=0x7f0d007d}
+              mFragmentId=#7f0d007d mContainerId=#7f0d007d mTag=null
+              mState=1 mIndex=1 mWho=android:fragment:6:1 mBackStackNesting=0
+              mAdded=true mRemoving=false mResumed=false mFromLayout=false mInLayout=false
+              mHidden=false mDetached=false mMenuVisible=false mHasMenu=false
+              mRetainInstance=false mRetaining=false mUserVisibleHint=false
+              mFragmentManager=FragmentManager{281eae0d in FragmentUpcoming{76cd836}}
+              mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+              mParentFragment=FragmentUpcoming{76cd836 #6 id=0x7f0d0071}
+              mSavedViewState={2131558510=android.view.AbsSavedState$1@1839c576}
+              Child FragmentManager{3f48d22f in Tab2{231ab80e}}:
+                FragmentManager misc state:
+                  mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+                  mContainer=android.support.v4.app.Fragment$1@2166003c
+                  mParent=Tab2{231ab80e #1 id=0x7f0d007d}
+                  mCurState=1 mStateSaved=true mDestroyed=false
+          Added Fragments:
+            #0: Tab1{192641c2 #0 id=0x7f0d007d}
+            #1: Tab2{231ab80e #1 id=0x7f0d007d}
+          FragmentManager misc state:
+            mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+            mContainer=android.support.v4.app.Fragment$1@36e891c5
+            mParent=FragmentUpcoming{76cd836 #6 id=0x7f0d0071}
+            mCurState=1 mStateSaved=true mDestroyed=false
+      #7: FragmentUpcoming{ce471a #7 id=0x7f0d0071}
+        mFragmentId=#7f0d0071 mContainerId=#7f0d0071 mTag=null
+        mState=1 mIndex=7 mWho=android:fragment:7 mBackStackNesting=2
+        mAdded=false mRemoving=true mResumed=false mFromLayout=false mInLayout=false
+        mHidden=false mDetached=false mMenuVisible=true mHasMenu=false
+        mRetainInstance=false mRetaining=false mUserVisibleHint=true
+        mFragmentManager=FragmentManager{8f05520 in MainActivity{3a560cb7}}
+        mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+        mSavedViewState={2131558524=HorizontalScrollView.SavedState{99a624b scrollPosition=0 isLayoutRtl=false}, 2131558525=FragmentPager.SavedState{31b0e428 position=0}}
+        Child FragmentManager{2cc58541 in FragmentUpcoming{ce471a}}:
+          Active Fragments in 2cc58541:
+            #0: Tab1{ff9bae6 #0 id=0x7f0d007d}
+              mFragmentId=#7f0d007d mContainerId=#7f0d007d mTag=null
+              mState=1 mIndex=0 mWho=android:fragment:7:0 mBackStackNesting=0
+              mAdded=true mRemoving=false mResumed=false mFromLayout=false mInLayout=false
+              mHidden=false mDetached=false mMenuVisible=true mHasMenu=false
+              mRetainInstance=false mRetaining=false mUserVisibleHint=true
+              mFragmentManager=FragmentManager{2cc58541 in FragmentUpcoming{ce471a}}
+              mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+              mParentFragment=FragmentUpcoming{ce471a #7 id=0x7f0d0071}
+              mSavedViewState={2131558555=AbsListView.SavedState{182ad827 selectedId=-9223372036854775808 firstId=-1 viewTop=0 position=0 height=900 filter=null checkState=null}}
+              Child FragmentManager{2d441ad4 in Tab1{ff9bae6}}:
+                FragmentManager misc state:
+                  mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+                  mContainer=android.support.v4.app.Fragment$1@1a24347d
+                  mParent=Tab1{ff9bae6 #0 id=0x7f0d007d}
+                  mCurState=1 mStateSaved=true mDestroyed=false
+            #1: Tab2{3f169f72 #1 id=0x7f0d007d}
+              mFragmentId=#7f0d007d mContainerId=#7f0d007d mTag=null
+              mState=1 mIndex=1 mWho=android:fragment:7:1 mBackStackNesting=0
+              mAdded=true mRemoving=false mResumed=false mFromLayout=false mInLayout=false
+              mHidden=false mDetached=false mMenuVisible=false mHasMenu=false
+              mRetainInstance=false mRetaining=false mUserVisibleHint=false
+              mFragmentManager=FragmentManager{2cc58541 in FragmentUpcoming{ce471a}}
+              mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+              mParentFragment=FragmentUpcoming{ce471a #7 id=0x7f0d0071}
+              mSavedViewState={2131558510=android.view.AbsSavedState$1@1839c576}
+              Child FragmentManager{562cfc3 in Tab2{3f169f72}}:
+                FragmentManager misc state:
+                  mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+                  mContainer=android.support.v4.app.Fragment$1@1a321040
+                  mParent=Tab2{3f169f72 #1 id=0x7f0d007d}
+                  mCurState=1 mStateSaved=true mDestroyed=false
+          Added Fragments:
+            #0: Tab1{ff9bae6 #0 id=0x7f0d007d}
+            #1: Tab2{3f169f72 #1 id=0x7f0d007d}
+          FragmentManager misc state:
+            mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+            mContainer=android.support.v4.app.Fragment$1@39c49b79
+            mParent=FragmentUpcoming{ce471a #7 id=0x7f0d0071}
+            mCurState=1 mStateSaved=true mDestroyed=false
+      #8: FragmentUpcoming{38ab40be #8 id=0x7f0d0071}
+        mFragmentId=#7f0d0071 mContainerId=#7f0d0071 mTag=null
+        mState=5 mIndex=8 mWho=android:fragment:8 mBackStackNesting=1
+        mAdded=true mRemoving=false mResumed=true mFromLayout=false mInLayout=false
+        mHidden=false mDetached=false mMenuVisible=true mHasMenu=false
+        mRetainInstance=false mRetaining=false mUserVisibleHint=true
+        mFragmentManager=FragmentManager{8f05520 in MainActivity{3a560cb7}}
+        mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+        mContainer=android.widget.RelativeLayout{1f98a51f V.E..... ........ 0,112-720,1134 #7f0d0071 app:id/fragment_place}
+        mView=android.widget.LinearLayout{b47f06c V.E..... ........ 0,0-720,1022}
+        mInnerView=android.widget.LinearLayout{b47f06c V.E..... ........ 0,0-720,1022}
+        Child FragmentManager{186a7635 in FragmentUpcoming{38ab40be}}:
+          Active Fragments in 186a7635:
+            #0: Tab1{3756aaca #0 id=0x7f0d007d}
+              mFragmentId=#7f0d007d mContainerId=#7f0d007d mTag=null
+              mState=5 mIndex=0 mWho=android:fragment:8:0 mBackStackNesting=0
+              mAdded=true mRemoving=false mResumed=true mFromLayout=false mInLayout=false
+              mHidden=false mDetached=false mMenuVisible=true mHasMenu=false
+              mRetainInstance=false mRetaining=false mUserVisibleHint=true
+              mFragmentManager=FragmentManager{186a7635 in FragmentUpcoming{38ab40be}}
+              mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+              mParentFragment=FragmentUpcoming{38ab40be #8 id=0x7f0d0071}
+              mContainer=android.support.v4.view.ViewPager{1a2c743b VFED.... ........ 0,102-720,1022 #7f0d007d app:id/pager}
+              mView=android.widget.RelativeLayout{10f9a758 V.E..... ........ 0,0-720,920}
+              mInnerView=android.widget.RelativeLayout{10f9a758 V.E..... ........ 0,0-720,920}
+              Child FragmentManager{115940b1 in Tab1{3756aaca}}:
+                FragmentManager misc state:
+                  mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+                  mContainer=android.support.v4.app.Fragment$1@e9ca996
+                  mParent=Tab1{3756aaca #0 id=0x7f0d007d}
+                  mCurState=5 mStateSaved=false mDestroyed=false
+            #1: Tab2{34641917 #1 id=0x7f0d007d}
+              mFragmentId=#7f0d007d mContainerId=#7f0d007d mTag=null
+              mState=5 mIndex=1 mWho=android:fragment:8:1 mBackStackNesting=0
+              mAdded=true mRemoving=false mResumed=true mFromLayout=false mInLayout=false
+              mHidden=false mDetached=false mMenuVisible=false mHasMenu=false
+              mRetainInstance=false mRetaining=false mUserVisibleHint=false
+              mFragmentManager=FragmentManager{186a7635 in FragmentUpcoming{38ab40be}}
+              mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+              mParentFragment=FragmentUpcoming{38ab40be #8 id=0x7f0d0071}
+              mContainer=android.support.v4.view.ViewPager{1a2c743b VFED.... ........ 0,102-720,1022 #7f0d007d app:id/pager}
+              mView=android.widget.RelativeLayout{d0de104 V.E..... ........ 720,0-1440,920}
+              mInnerView=android.widget.RelativeLayout{d0de104 V.E..... ........ 720,0-1440,920}
+              Child FragmentManager{169036ed in Tab2{34641917}}:
+                FragmentManager misc state:
+                  mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+                  mContainer=android.support.v4.app.Fragment$1@3471c922
+                  mParent=Tab2{34641917 #1 id=0x7f0d007d}
+                  mCurState=5 mStateSaved=false mDestroyed=false
+          Added Fragments:
+            #0: Tab1{3756aaca #0 id=0x7f0d007d}
+            #1: Tab2{34641917 #1 id=0x7f0d007d}
+          FragmentManager misc state:
+            mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+            mContainer=android.support.v4.app.Fragment$1@32072fb3
+            mParent=FragmentUpcoming{38ab40be #8 id=0x7f0d0071}
+            mCurState=5 mStateSaved=false mDestroyed=false
+    Added Fragments:
+      #0: FragmentUpcoming{38ab40be #8 id=0x7f0d0071}
+    Back Stack:
+      #0: BackStackEntry{150a0970 #0}
+        mName=null mIndex=0 mCommitted=true
+        Operations:
+          Op #0: REPLACE FragmentUpcoming{2ff4c302 #1 id=0x7f0d0071}
+            Removed: FragmentUpcoming{3f042ed9 #0 id=0x7f0d0071}
+      #1: BackStackEntry{c654e9 #1}
+        mName=null mIndex=1 mCommitted=true
+        Operations:
+          Op #0: REPLACE FragmentUpcoming{257c7826 #2 id=0x7f0d0071}
+            Removed: FragmentUpcoming{2ff4c302 #1 id=0x7f0d0071}
+      #2: BackStackEntry{1787556e #2}
+        mName=null mIndex=2 mCommitted=true
+        Operations:
+          Op #0: REPLACE FragmentUpcoming{c98e40a #3 id=0x7f0d0071}
+            Removed: FragmentUpcoming{257c7826 #2 id=0x7f0d0071}
+      #3: BackStackEntry{1bb140f #3}
+        mName=null mIndex=3 mCommitted=true
+        Operations:
+          Op #0: REPLACE FragmentUpcoming{3bb04aae #4 id=0x7f0d0071}
+            Removed: FragmentUpcoming{c98e40a #3 id=0x7f0d0071}
+      #4: BackStackEntry{f5e4c9c #4}
+        mName=null mIndex=4 mCommitted=true
+        Operations:
+          Op #0: REPLACE FragmentUpcoming{3515b012 #5 id=0x7f0d0071}
+            Removed: FragmentUpcoming{3bb04aae #4 id=0x7f0d0071}
+      #5: BackStackEntry{232656a5 #5}
+        mName=null mIndex=5 mCommitted=true
+        Operations:
+          Op #0: REPLACE FragmentUpcoming{76cd836 #6 id=0x7f0d0071}
+            Removed: FragmentUpcoming{3515b012 #5 id=0x7f0d0071}
+      #6: BackStackEntry{e575a7a #6}
+        mName=null mIndex=6 mCommitted=true
+        Operations:
+          Op #0: REPLACE FragmentUpcoming{ce471a #7 id=0x7f0d0071}
+            Removed: FragmentUpcoming{76cd836 #6 id=0x7f0d0071}
+      #7: BackStackEntry{2d1ee22b #7}
+        mName=null mIndex=7 mCommitted=true
+        Operations:
+          Op #0: REPLACE FragmentUpcoming{38ab40be #8 id=0x7f0d0071}
+            Removed: FragmentUpcoming{ce471a #7 id=0x7f0d0071}
+    Back Stack Indices:
+      #0: BackStackEntry{150a0970 #0}
+      #1: BackStackEntry{c654e9 #1}
+      #2: BackStackEntry{1787556e #2}
+      #3: BackStackEntry{1bb140f #3}
+      #4: BackStackEntry{f5e4c9c #4}
+      #5: BackStackEntry{232656a5 #5}
+      #6: BackStackEntry{e575a7a #6}
+      #7: BackStackEntry{2d1ee22b #7}
+    FragmentManager misc state:
+      mActivity=com.devon_dickson.apps.orgspace.MainActivity@3a560cb7
+      mContainer=android.support.v4.app.FragmentActivity$2@37519688
+      mCurState=5 mStateSaved=false mDestroyed=false
+    View Hierarchy:
+      com.android.internal.policy.impl.PhoneWindow$DecorView{1ecab821 V.E..... ... 0,0-720,1280}
+        android.widget.LinearLayout{2af0a446 V.E..... ... 0,0-720,1184}
+          android.view.ViewStub{2ea77607 G.E..... ... 0,0-0,0 #1020375}
+          android.widget.FrameLayout{33ad9334 V.E..... ... 0,50-720,1184}
+            android.support.v7.internal.widget.FitWindowsLinearLayout{31f9b55d V.E..... ... 0,0-720,1134 #7f0d0052 app:id/action_bar_root}
+              android.support.v7.internal.widget.ViewStubCompat{3f82bed2 G.E..... ... 0,0-0,0 #7f0d0053 app:id/action_mode_bar_stub}
+              android.support.v7.internal.widget.ContentFrameLayout{93b6ba3 V.E..... ... 0,0-720,1134 #1020002 android:id/content}
+                android.support.v4.widget.DrawerLayout{2c2aaea0 VFE..... ... 0,0-720,1134 #7f0d006f app:id/DrawerLayout}
+                  android.widget.LinearLayout{3f214a59 V.E..... ... 0,0-720,1134}
+                    android.support.v7.widget.Toolbar{1fa9f61e V.E..... ... 0,0-720,112 #7f0d0070 app:id/tool_bar}
+                      android.widget.TextView{3d8f1eff V.ED.... ... 120,29-342,83}
+                      android.widget.ImageButton{99c14cc VFED..C. ... 0,0-112,112}
+                      android.support.v7.widget.ActionMenuView{7933315 V.E..... ... 544,0-720,112}
+                        android.support.v7.internal.view.menu.ActionMenuItemView{2a7b562a VFED..CL ... 0,8-96,104 #7f0d00a2 app:id/action_search}
+                        android.support.v7.widget.ActionMenuPresenter$OverflowMenuButton{3940ac1b VFED..C. ... 96,8-176,104}
+                    android.widget.RelativeLayout{1f98a51f V.E..... ... 0,112-720,1134 #7f0d0071 app:id/fragment_place}
+                      android.widget.LinearLayout{b47f06c V.E..... ... 0,0-720,1022}
+                        com.devon_dickson.apps.orgspace.SlidingTabLayout{cdbb1b8 VFED.... ... 0,0-720,102 #7f0d007c app:id/tabs}
+                          com.devon_dickson.apps.orgspace.SlidingTabStrip{1600eb91 V.ED.... ... 0,0-720,102}
+                            android.widget.TextView{2950aaf6 V.ED..C. .S. 0,0-360,102}
+                            android.widget.TextView{1bb3eef7 V.ED..C. ... 360,0-720,102}
+                        android.support.v4.view.ViewPager{1a2c743b VFED.... ... 0,102-720,1022 #7f0d007d app:id/pager}
+                          android.widget.RelativeLayout{10f9a758 V.E..... ... 0,0-720,920}
+                            android.widget.ListView{28763164 VFED.VC. F.. 0,20-720,920 #7f0d009b app:id/eventList}
+                              android.widget.LinearLayout{14b7afcd V.E..... ... 0,0-720,157}
+                                android.widget.ImageView{f548082 V.ED..C. ... 32,30-128,126 #7f0d0077 app:id/imageView3}
+                                android.widget.RelativeLayout{2cae8393 V.E..... ... 160,20-720,137}
+                                  android.support.v7.widget.AppCompatTextView{916ffd0 V.ED.... ... 0,0-560,33 #7f0d0078 app:id/eventTime}
+                                  android.support.v7.widget.AppCompatTextView{b9c7bc9 V.ED.... ... 0,33-560,84 #7f0d0079 app:id/eventName}
+                                  android.support.v7.widget.AppCompatTextView{25ce22ce V.ED.... ... 0,84-560,117 #7f0d007a app:id/eventLocation}
+                              android.widget.LinearLayout{20b3c5ef V.E..... ... 0,177-720,334}
+                                android.widget.ImageView{38b448fc V.ED..C. ... 32,30-128,126 #7f0d0077 app:id/imageView3}
+                                android.widget.RelativeLayout{1e80b85 V.E..... ... 160,20-720,137}
+                                  android.support.v7.widget.AppCompatTextView{312d9dda V.ED.... ... 0,0-560,33 #7f0d0078 app:id/eventTime}
+                                  android.support.v7.widget.AppCompatTextView{720d20b V.ED.... ... 0,33-560,84 #7f0d0079 app:id/eventName}
+                                  android.support.v7.widget.AppCompatTextView{87af8e8 V.ED.... ... 0,84-560,117 #7f0d007a app:id/eventLocation}
+                              android.widget.LinearLayout{3fa2db01 V.E..... ... 0,354-720,511}
+                                android.widget.ImageView{1ad7bda6 V.ED..C. ... 32,30-128,126 #7f0d0077 app:id/imageView3}
+                                android.widget.RelativeLayout{3e0883e7 V.E..... ... 160,20-720,137}
+                                  android.support.v7.widget.AppCompatTextView{2d7abb94 V.ED.... ... 0,0-560,33 #7f0d0078 app:id/eventTime}
+                                  android.support.v7.widget.AppCompatTextView{2ae1263d V.ED.... ... 0,33-560,84 #7f0d0079 app:id/eventName}
+                                  android.support.v7.widget.AppCompatTextView{2bb20e32 V.ED.... ... 0,84-560,117 #7f0d007a app:id/eventLocation}
+                              android.widget.LinearLayout{7cf7783 V.E..... ... 0,531-720,688}
+                                android.widget.ImageView{3c11fd00 V.ED..C. ... 32,30-128,126 #7f0d0077 app:id/imageView3}
+                                android.widget.RelativeLayout{3cbee939 V.E..... ... 160,20-720,137}
+                                  android.support.v7.widget.AppCompatTextView{236edb7e V.ED.... ... 0,0-560,33 #7f0d0078 app:id/eventTime}
+                                  android.support.v7.widget.AppCompatTextView{1e8808df V.ED.... ... 0,33-560,84 #7f0d0079 app:id/eventName}
+                                  android.support.v7.widget.AppCompatTextView{2e19e92c V.ED.... ... 0,84-560,117 #7f0d007a app:id/eventLocation}
+                              android.widget.LinearLayout{a1bdff5 V.E..... ... 0,708-720,865}
+                                android.widget.ImageView{3899318a V.ED..C. ... 32,30-128,126 #7f0d0077 app:id/imageView3}
+                                android.widget.RelativeLayout{210e53fb V.E..... ... 160,20-720,137}
+                                  android.support.v7.widget.AppCompatTextView{1fd26c18 V.ED.... ... 0,0-560,33 #7f0d0078 app:id/eventTime}
+                                  android.support.v7.widget.AppCompatTextView{1c178671 V.ED.... ... 0,33-560,84 #7f0d0079 app:id/eventName}
+                                  android.support.v7.widget.AppCompatTextView{d60dc56 V.ED.... ... 0,84-560,117 #7f0d007a app:id/eventLocation}
+                              android.widget.LinearLayout{35e434d7 V.E..... ... 0,885-720,1042}
+                                android.widget.ImageView{2f8e31c4 V.ED..C. ... 32,30-128,126 #7f0d0077 app:id/imageView3}
+                                android.widget.RelativeLayout{144d18ad V.E..... ... 160,20-720,137}
+                                  android.support.v7.widget.AppCompatTextView{252667e2 V.ED.... ... 0,0-560,33 #7f0d0078 app:id/eventTime}
+                                  android.support.v7.widget.AppCompatTextView{3fcd4773 V.ED.... ... 0,33-560,84 #7f0d0079 app:id/eventName}
+                                  android.support.v7.widget.AppCompatTextView{2c1ea630 V.ED.... ... 0,84-560,117 #7f0d007a app:id/eventLocation}
+                          android.widget.RelativeLayout{d0de104 V.E..... ... 720,0-1440,920}
+                            android.support.v7.widget.AppCompatTextView{18cf92a9 V.ED.... ... 206,435-513,484 #7f0d006e app:id/textView}
+                  android.support.v7.widget.RecyclerView{26c7202e I.ED.V.. ... -640,0-0,1134 #7f0d0072 app:id/RecyclerView}
+                    android.widget.RelativeLayout{2ae7cf V.E..... ... 0,0-640,356}
+                      android.widget.LinearLayout{3dfff55c V.E..... ... 0,244-640,356}
+                        android.support.v7.widget.AppCompatTextView{3e5b065 V.ED.... ... 32,0-219,38 #7f0d007e app:id/name}
+                        android.support.v7.widget.AppCompatTextView{37a9113a V.ED.... ... 32,48-355,86 #7f0d007f app:id/email}
+                      de.hdodenhof.circleimageview.CircleImageView{31831eb V.ED.... ... 32,76-172,216 #7f0d0080 app:id/circleView}
+                    android.widget.LinearLayout{37450b48 V.E..... ... 0,356-640,440}
+                      android.widget.ImageView{1385ede1 V.ED..C. ... 32,36-80,84 #7f0d0081 app:id/rowIcon}
+                      android.support.v7.widget.AppCompatTextView{3b870706 V.ED.... ... 144,36-230,84 #7f0d0082 app:id/rowText}
+                    android.widget.LinearLayout{314601c7 V.E..... ... 0,440-640,524}
+                      android.widget.ImageView{364393f4 V.ED..C. ... 32,36-80,84 #7f0d0081 app:id/rowIcon}
+                      android.support.v7.widget.AppCompatTextView{1492871d V.ED.... ... 144,36-271,84 #7f0d0082 app:id/rowText}
+                    android.widget.LinearLayout{4fc8d92 V.E..... ... 0,524-640,608}
+                      android.widget.ImageView{2396f363 V.ED..C. ... 32,36-80,84 #7f0d0081 app:id/rowIcon}
+                      android.support.v7.widget.AppCompatTextView{6fffb60 V.ED.... ... 144,36-269,84 #7f0d0082 app:id/rowText}
+                    android.widget.LinearLayout{5d57819 V.E..... ... 0,608-640,692}
+                      android.widget.ImageView{2d1f0de V.ED..C. ... 32,36-80,84 #7f0d0081 app:id/rowIcon}
+                      android.support.v7.widget.AppCompatTextView{147b62bf V.ED.... ... 144,36-261,84 #7f0d0082 app:id/rowText}
+        android.view.View{2f596d8c V.ED.... ... 0,1184-720,1280 #1020030 android:id/navigationBarBackground}
+
+  ACTIVITY com.devon_dickson.apps.orgspace/.SelectSchool 11976077 pid=4882
+    Local Activity 2c980a21 State:
+      mResumed=false mStopped=true mFinished=false
+      mLoadersStarted=false
+      mChangingConfigurations=false
+      mCurrentConfig={1.0 310mcc65535mnc en_US ?layoutDir sw360dp w360dp h567dp 320dpi nrml port finger -keyb/v/h -nav/h s.37?spn}
+    FragmentManager misc state:
+      mActivity=com.devon_dickson.apps.orgspace.SelectSchool@2c980a21
+      mContainer=android.app.Activity$1@2ebc7cd5
+      mCurState=3 mStateSaved=true mDestroyed=false
+    ViewRoot:
+      mAdded=true mRemoved=false
+      mConsumeBatchedInputScheduled=false
+      mConsumeBatchedInputImmediatelyScheduled=false
+      mPendingInputEventCount=0
+      mProcessInputEventsScheduled=false
+      mTraversalScheduled=false
+      android.view.ViewRootImpl$NativePreImeInputStage: mQueueLength=0
+      android.view.ViewRootImpl$ImeInputStage: mQueueLength=0
+      android.view.ViewRootImpl$NativePostImeInputStage: mQueueLength=0
+    Choreographer:
+      mFrameScheduled=false
+      mLastFrameTime=61907459 (8 ms ago)
+    View Hierarchy:
+      com.android.internal.policy.impl.PhoneWindow$DecorView{36083cea I.E..... R......D 0,0-720,1280}
+        android.widget.LinearLayout{b0d6bdb V.E..... .......D 0,0-720,1184}
+          android.view.ViewStub{11f5d678 G.E..... ......I. 0,0-0,0 #1020375}
+          android.widget.FrameLayout{25d51151 V.E..... .......D 0,50-720,1184 #1020002 android:id/content}
+            android.widget.RelativeLayout{3ca53db6 V.E..... .......D 0,0-720,1134}
+              android.widget.ScrollView{1beceab7 VFED.V.. .......D 32,32-688,1102 #7f0d0049 app:id/scrollView}
+                android.widget.RelativeLayout{13ede224 V.E..... .......D 0,0-656,1070}
+                  android.widget.ImageView{308718d V.ED.... ........ 0,20-656,250 #7f0d0073 app:id/imageView}
+                  android.widget.TextView{3d3f7f42 V.ED.... ........ 0,250-409,315 #7f0d0074 app:id/textView2}
+                  android.widget.EditText{1bdb7b53 VFED..CL .F....ID 0,315-656,398 #7f0d0075 app:id/schoolSearch}
+                  android.widget.ListView{3138fc90 VFED.VC. ........ 0,398-656,1070 #7f0d0076 app:id/schoolList}
+                    android.widget.TextView{39979989 V.ED.... ........ 0,0-656,96 #1020014 android:id/text1}
+                    android.widget.TextView{3f4a4d8e V.ED.... .....A.. 0,97-656,193 #1020014 android:id/text1}
+                    android.widget.TextView{201879af V.ED.... ........ 0,194-656,290 #1020014 android:id/text1}
+                    android.widget.TextView{2bd951bc V.ED.... ........ 0,291-656,387 #1020014 android:id/text1}
+                    android.widget.TextView{15d74545 V.ED.... ........ 0,388-656,484 #1020014 android:id/text1}
+                    android.widget.TextView{3c21b49a V.ED.... ........ 0,485-656,581 #1020014 android:id/text1}
+                    android.widget.TextView{287d01cb V.ED.... ........ 0,582-656,678 #1020014 android:id/text1}
+        android.view.View{1c7cda8 V.ED.... ........ 0,1184-720,1280 #1020030 android:id/navigationBarBackground}
+    Looper (main, tid 1) {1aabf0c1}
+      Message 0: { when=+486ms callback=android.widget.Editor$Blink target=android.widget.Editor$Blink }
+      (Total messages: 1, idling=false, quitting=false)
