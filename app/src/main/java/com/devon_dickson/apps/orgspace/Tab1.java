@@ -16,6 +16,8 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
+import com.orm.SugarApp;
+
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
@@ -35,7 +37,7 @@ import java.util.Locale;
  */
 
 
-public class Tab1 extends Fragment {
+public class Tab1 extends Fragment{
 
 
     private ProgressDialog pDialog;
@@ -45,7 +47,6 @@ public class Tab1 extends Fragment {
 
     // JSON Node names
     private static final String TAG_EVENT = "event";
-    private static final String TAG_ID = "Event ID";
     private static final String TAG_EVENTNAME = "Event Name";
     private static final String TAG_LOCATION = "Location";
     private static final String TAG_RAINLOCATION = "Rain Location";
@@ -53,10 +54,9 @@ public class Tab1 extends Fragment {
     private static final String TAG_TIME = "Time";
     private static final String TAG_RSVP = "RSVP";
     private ListView lv;
+    private Event eventss;
     private SimpleAdapter adapter;
     private List<Event> values;
-    private ArrayList<HashMap<String, String>> valuesMap;
-    private EventsDataSource datasource;
     // contacts JSONArray
     JSONArray events = null;
     private ArrayList<Event> listOfEvents = new ArrayList<Event>();
@@ -79,48 +79,8 @@ public class Tab1 extends Fragment {
     }
     public void onViewCreated(View view, Bundle savedInstanceState) {
         lv = (ListView) getView().findViewById(R.id.eventList);
-        // use the SimpleCursorAdapter to show the
-        // elements in a ListView
-
-        downloadEvents(lv);
 
 
-        if(valuesMap==null) {
-            valuesMap.add(0, new HashMap<String, String>());
-        }
-
-        Log.d("Values map is: ", "" + valuesMap.get(0));
-        adapter = new SimpleAdapter(
-                getActivity(), valuesMap,
-                R.layout.event_row, new String[] { TAG_EVENTNAME, TAG_LOCATION, TAG_TIME, TAG_ORG }, new int[] { R.id.eventName,
-                R.id.eventLocation, R.id.eventTime });
-        lv.setAdapter(adapter);
-    }
-
-    private ArrayList<HashMap<String, String>> downloadEvents(ListView lv) {
-        //For SQLite DB*******************************
-        datasource = new EventsDataSource(getActivity());
-        datasource.open();
-        values = datasource.getAllEvents();
-        if(values!=null) {
-            for(int i = 0; i < values.size(); i++) {
-                HashMap<String, String> eventMap = new HashMap<String, String>();
-
-                // adding each child node to HashMap key => value
-                eventMap.put(TAG_ID, Integer.toString(values.get(i).getId()));
-                eventMap.put(TAG_EVENTNAME, values.get(i).getName());
-                eventMap.put(TAG_LOCATION, values.get(i).getLocation());
-                eventMap.put(TAG_RAINLOCATION, values.get(i).getRain());
-                eventMap.put(TAG_ORG, values.get(i).getOrg());
-                eventMap.put(TAG_TIME, values.get(i).getTime().toUpperCase());
-                eventMap.put(TAG_RSVP, values.get(i).getRsvp());
-
-                // adding contact to contact list
-                valuesMap.add(eventMap);
-            }
-        }
-        //******************************************
-        return valuesMap;
     }
 
     private class GetContacts extends AsyncTask<Void, Void, Void> {
@@ -155,15 +115,18 @@ public class Tab1 extends Fragment {
 
                     // looping through All Contacts
                     for (int i = 0; i < events.length(); i++) {
+
                         JSONObject c = events.getJSONObject(i);
 
-                        int eventID = c.getInt(TAG_ID);
                         String eventName = c.getString(TAG_EVENTNAME);
                         String location = c.getString(TAG_LOCATION);
                         String rain = c.getString(TAG_RAINLOCATION);
                         String org = c.getString(TAG_ORG);
                         String time = c.getString(TAG_TIME);
                         String rsvp = c.getString(TAG_RSVP);
+
+                        Event eventTest = new Event("Hello", "Darkness", "My", "Old", "Friend", ":)");
+                        eventTest.save();
 
                         SimpleDateFormat format = new SimpleDateFormat("EEE, MMM d, h:mm a", Locale.US);
                         SimpleDateFormat parserSDF = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.US);
@@ -174,7 +137,7 @@ public class Tab1 extends Fragment {
                             e.printStackTrace();
                         }
 
-                        listOfEvents.add(new Event(eventID, eventName, location, rain, org, time, rsvp));
+                        listOfEvents.add(new Event(eventName, location, rain, org, time, rsvp));
                         // tmp hashmap for single contact
                         HashMap<String, String> event = new HashMap<String, String>();
 
@@ -188,13 +151,12 @@ public class Tab1 extends Fragment {
 
                         // adding contact to contact list
                         eventList.add(event);
-                        Event eventTest = datasource.addEvent(eventID, eventName, location, rain, org, time.toUpperCase(), rsvp);
-                        adapter.notifyDataSetChanged();
                     }
 
                     //TODO
                     //Put the events in listOfEvents into the internal SQL database
-
+                    List<Event> eventss = Event.listAll(Event.class);
+                    Log.d("eventsssss at index 0: ", eventss.get(0).getName());
 
 
                 } catch (JSONException e) {

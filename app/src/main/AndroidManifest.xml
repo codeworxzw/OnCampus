@@ -9,7 +9,12 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:screenOrientation="portrait"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme"
+        android:name="com.orm.SugarApp">
+        <meta-data android:name="DATABASE" android:value="orgspacedrj.db"/>
+        <meta-data android:name="Version" android:value="1"/>
+        <meta-data android:name="QUERY_LOG" android:value="false"/>
+        <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="com.devon-dickson.apps.orgspace"/>
         <activity
             android:name=".SelectSchool"
             android:label="@string/app_name"

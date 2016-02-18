@@ -1,12 +1,13 @@
 package com.devon_dickson.apps.orgspace;
 
+import com.orm.SugarRecord;
+
 /**
  * Created by ddickson1 on 2/5/2016.
  */
 
 
-public class Event {
-    private int id;
+public class Event extends SugarRecord{
     private String name;
     private String location;
     private String rain;
@@ -14,8 +15,9 @@ public class Event {
     private String time;
     private String rsvp;
 
-    public Event(int id, String name, String location, String rain, String org, String time, String rsvp) {
-        this.id = id;
+    public Event() {}
+
+    public Event(String name, String location, String rain, String org, String time, String rsvp) {
         this.name = name;
         this.location = location;
         this.rain = rain;
@@ -27,14 +29,6 @@ public class Event {
     @Override
     public String toString() {
         return name;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
