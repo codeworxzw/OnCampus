@@ -1,7 +1,6 @@
 package com.devon_dickson.apps.orgspace;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,16 +9,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.Toast;
 
-import com.orm.SugarApp;
+import com.orm.SugarContext;
 
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -54,18 +49,19 @@ public class Tab1 extends Fragment{
     private static final String TAG_TIME = "Time";
     private static final String TAG_RSVP = "RSVP";
     private ListView lv;
-    private Event eventss;
+    //private eve eventTable;
     private SimpleAdapter adapter;
-    private List<Event> values;
+    //private List<Event> values;
     // contacts JSONArray
     JSONArray events = null;
-    private ArrayList<Event> listOfEvents = new ArrayList<Event>();
+    //private ArrayList<Event> listOfPenises = new ArrayList<Event>();
     // Hashmap for ListView
     ArrayList<HashMap<String, String>> eventList;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.tab_1, container, false);
+        SugarContext.init(getActivity());
 
         //new eventDownload().execute();
         eventList = new ArrayList<HashMap<String, String>>();
@@ -118,15 +114,14 @@ public class Tab1 extends Fragment{
 
                         JSONObject c = events.getJSONObject(i);
 
-                        String eventName = c.getString(TAG_EVENTNAME);
+                        String name = c.getString(TAG_EVENTNAME);
                         String location = c.getString(TAG_LOCATION);
                         String rain = c.getString(TAG_RAINLOCATION);
                         String org = c.getString(TAG_ORG);
                         String time = c.getString(TAG_TIME);
                         String rsvp = c.getString(TAG_RSVP);
 
-                        Event eventTest = new Event("Hello", "Darkness", "My", "Old", "Friend", ":)");
-                        eventTest.save();
+
 
                         SimpleDateFormat format = new SimpleDateFormat("EEE, MMM d, h:mm a", Locale.US);
                         SimpleDateFormat parserSDF = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.US);
@@ -137,26 +132,18 @@ public class Tab1 extends Fragment{
                             e.printStackTrace();
                         }
 
-                        listOfEvents.add(new Event(eventName, location, rain, org, time, rsvp));
+
+                        Event eventTableRow = new Event(name, location, rain, org, time, rsvp);
+                        eventTableRow.save();
+                        //listOfPenises.add(new Event(eventName, location, rain, org, time, rsvp));
                         // tmp hashmap for single contact
-                        HashMap<String, String> event = new HashMap<String, String>();
 
-                        // adding each child node to HashMap key => value
-                        event.put(TAG_EVENTNAME, eventName);
-                        event.put(TAG_LOCATION, location);
-                        event.put(TAG_RAINLOCATION, rain);
-                        event.put(TAG_ORG, org);
-                        event.put(TAG_TIME, time.toUpperCase());
-                        event.put(TAG_RSVP, rsvp);
-
-                        // adding contact to contact list
-                        eventList.add(event);
                     }
 
                     //TODO
-                    //Put the events in listOfEvents into the internal SQL database
-                    List<Event> eventss = Event.listAll(Event.class);
-                    Log.d("eventsssss at index 0: ", eventss.get(0).getName());
+                    //Put the events in listOfPenises into the internal SQL database
+                    //List<Event> eventses = Event.listAll(Event.class);
+                    //Log.d("eventsssss at index 0: ", eventses.get(0).getName());
 
 
                 } catch (JSONException e) {
@@ -175,6 +162,9 @@ public class Tab1 extends Fragment{
             // Dismiss the progress dialog
             if (pDialog.isShowing())
                 pDialog.dismiss();
+
+            updateList();
+
             /**
              * Updating parsed JSON data into ListView
              * */
@@ -184,6 +174,22 @@ public class Tab1 extends Fragment{
                     R.id.eventLocation, R.id.eventTime });
 
             lv.setAdapter(adapter);
+        }
+
+        protected void updateList() {
+            HashMap<String, String> event = new HashMap<String, String>();
+
+            List<Event> events = Event.listAll(Event.class);
+            for (Event e : events) {
+                event.put(TAG_EVENTNAME, e.getName());
+                event.put(TAG_LOCATION, e.getLocation());
+                event.put(TAG_RAINLOCATION, e.getRain());
+                event.put(TAG_ORG, e.getOrg());
+                event.put(TAG_TIME, e.getTime().toUpperCase());
+                event.put(TAG_RSVP, e.getRsvp());
+
+                eventList.add(event);
+            }
         }
 
     }
