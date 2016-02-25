@@ -2,67 +2,67 @@
 <items version="2" >
 
     <item
-        jar="T:\OrgSpace\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.2.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="d4c936aa8c7d2522c82e3f1829c791d9e367f009">
-        <dex dex="T:\OrgSpace\app\build\intermediates\pre-dexed\debug\classes-5066972925b254c64a014917f1fb3c9c46473cb4.jar" />
-    </item>
-    <item
-        jar="C:\Users\ddickson1.PLYMOUTH.001\.gradle\caches\modules-2\files-2.1\com.google.guava\guava\18.0\cce0823396aa693798f8882e64213b1772032b09\guava-18.0.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="cce0823396aa693798f8882e64213b1772032b09">
-        <dex dex="T:\OrgSpace\app\build\intermediates\pre-dexed\debug\guava-18.0-0b43b24a9a93198f340b02f0607d3ac76cf0f300.jar" />
-    </item>
-    <item
-        jar="T:\OrgSpace\app\build\intermediates\exploded-aar\com.android.support\design\22.2.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
-        <dex dex="T:\OrgSpace\app\build\intermediates\pre-dexed\debug\classes-0cf9f8f7c347de985e1eb347284a0d8aa94915d6.jar" />
-    </item>
-    <item
-        jar="C:\Users\ddickson1.PLYMOUTH\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\23.2.0\support-annotations-23.2.0.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="c5bf571bb10462bd90e5419ade67793f71acbc87">
-        <dex dex="T:\OrgSpace\app\build\intermediates\pre-dexed\debug\support-annotations-23.2.0-4bcb6bc2195dacedae610e5fc9e34c3cf610c0e9.jar" />
-    </item>
-    <item
-        jar="T:\OrgSpace\app\build\intermediates\exploded-aar\com.github.satyan\sugar\1.4\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="ac045b53684345f4ec8468477e8fc5034d0d2bfd">
-        <dex dex="T:\OrgSpace\app\build\intermediates\pre-dexed\debug\classes-418e37588a457a9e5435460d246df28a3de2d098.jar" />
-    </item>
-    <item
-        jar="T:\OrgSpace\app\build\intermediates\exploded-aar\de.hdodenhof\circleimageview\1.2.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="4b868b833b0887aa48c4e581558eef4f1196f6a2">
-        <dex dex="T:\OrgSpace\app\build\intermediates\pre-dexed\debug\classes-750579f88d4a89a79766e4ff20ef30b408137b7e.jar" />
-    </item>
-    <item
-        jar="T:\OrgSpace\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.0\jars\libs\internal_impl-23.2.0.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="6e239441500605809818997dd63b62a947195f8c">
-        <dex dex="T:\OrgSpace\app\build\intermediates\pre-dexed\debug\internal_impl-23.2.0-e3fe071ecc7d70129ecf514f2738cf0e8fc46ee1.jar" />
-    </item>
-    <item
-        jar="T:\OrgSpace\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\jars\classes.jar"
+        jar="C:\Users\Devon\Documents\GitHub\OrgSpace\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.2"
         sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
-        <dex dex="T:\OrgSpace\app\build\intermediates\pre-dexed\debug\classes-b88bb805b7a6dc320c0de4b29d0e10470cd986f8.jar" />
+        <dex dex="C:\Users\Devon\Documents\GitHub\OrgSpace\app\build\intermediates\pre-dexed\debug\classes-0bcfab96271c3caa34e382a5b8b6d13284ad2760.jar" />
     </item>
     <item
-        jar="T:\OrgSpace\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.0\jars\classes.jar"
+        jar="C:\Users\Devon\Documents\GitHub\OrgSpace\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="e5f32fa48a3eb2de0c987025c11b6e3864b634d9">
-        <dex dex="T:\OrgSpace\app\build\intermediates\pre-dexed\debug\classes-9d5d4ba5ab7cd7e3c45c840213e096660482b066.jar" />
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="C:\Users\Devon\Documents\GitHub\OrgSpace\app\build\intermediates\pre-dexed\debug\internal_impl-23.1.1-f04779c84bcf048074eaa5261e784fa9eda316e4.jar" />
+    </item>
+    <item
+        jar="C:\Users\Devon\Documents\GitHub\OrgSpace\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
+        <dex dex="C:\Users\Devon\Documents\GitHub\OrgSpace\app\build\intermediates\pre-dexed\debug\classes-553bf23a59a381e51b63f431c3f400e39f22b92a.jar" />
+    </item>
+    <item
+        jar="C:\Users\Devon\Documents\GitHub\OrgSpace\app\build\intermediates\exploded-aar\com.github.satyan\sugar\1.4\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="ac045b53684345f4ec8468477e8fc5034d0d2bfd">
+        <dex dex="C:\Users\Devon\Documents\GitHub\OrgSpace\app\build\intermediates\pre-dexed\debug\classes-d343ae93c9d5a98a56a49671104940326e7aeb78.jar" />
+    </item>
+    <item
+        jar="C:\Users\Devon\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="C:\Users\Devon\Documents\GitHub\OrgSpace\app\build\intermediates\pre-dexed\debug\support-annotations-23.1.1-b41ef6bd4f41aa47c047e332481a3cc4286eae30.jar" />
+    </item>
+    <item
+        jar="C:\Users\Devon\Documents\GitHub\OrgSpace\app\build\intermediates\exploded-aar\com.android.support\design\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
+        <dex dex="C:\Users\Devon\Documents\GitHub\OrgSpace\app\build\intermediates\pre-dexed\debug\classes-133bd6a26d52c669aac2921c4ca19a51d38c6a8a.jar" />
+    </item>
+    <item
+        jar="C:\Users\Devon\.gradle\caches\modules-2\files-2.1\com.google.guava\guava\18.0\cce0823396aa693798f8882e64213b1772032b09\guava-18.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="cce0823396aa693798f8882e64213b1772032b09">
+        <dex dex="C:\Users\Devon\Documents\GitHub\OrgSpace\app\build\intermediates\pre-dexed\debug\guava-18.0-7616de3dc13583f4b9b1cf7126581b39dd6827c4.jar" />
+    </item>
+    <item
+        jar="C:\Users\Devon\Documents\GitHub\OrgSpace\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="C:\Users\Devon\Documents\GitHub\OrgSpace\app\build\intermediates\pre-dexed\debug\classes-ac147a06e749f6f833a919df1d809a82a1b88df4.jar" />
+    </item>
+    <item
+        jar="C:\Users\Devon\Documents\GitHub\OrgSpace\app\build\intermediates\exploded-aar\de.hdodenhof\circleimageview\1.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="4b868b833b0887aa48c4e581558eef4f1196f6a2">
+        <dex dex="C:\Users\Devon\Documents\GitHub\OrgSpace\app\build\intermediates\pre-dexed\debug\classes-1557383ff8bb2bee22e529b305454ed6a7a3c381.jar" />
     </item>
 
 </items>
