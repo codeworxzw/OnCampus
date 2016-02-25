@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/ColorPrimary</item>
-        <item name="colorPrimaryDark">@color/ColorPrimaryDark</item>
-        <item name="colorAccent">@color/Accent</item>
+    <style name="AppTheme" parent="android:Theme.Material.Light">
+
+        <item name="android:colorPrimary">@color/ColorPrimary</item>
+        <item name="android:colorPrimaryDark">@color/ColorPrimaryDark</item>
+        <item name="android:colorAccent">@color/Accent</item>
+        <item name="android:colorForeground">@color/bright_foreground_material_light</item>
+        <item name="android:statusBarColor">@color/ColorPrimaryDark</item>
+        <item name="android:navigationBarColor">@android:color/black</item>
     </style>
 </resources>

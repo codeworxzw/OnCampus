@@ -3,23 +3,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-    <ListView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:id="@+id/eventList"
-        android:stackFromBottom="false"
-        android:smoothScrollbar="false"
-        android:headerDividersEnabled="false"
-        android:footerDividersEnabled="false"
-        android:fastScrollAlwaysVisible="false"
-        android:drawSelectorOnTop="false"
-        android:clickable="false"
-        android:layout_alignParentEnd="false"
-        android:layout_alignParentStart="false"
-        android:dividerHeight="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:divider="@drawable/abc_dialog_material_background_light" />
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/swipeContainer">
+        <ListView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/eventList"
+            android:stackFromBottom="false"
+            android:smoothScrollbar="false"
+            android:headerDividersEnabled="false"
+            android:footerDividersEnabled="false"
+            android:fastScrollAlwaysVisible="false"
+            android:drawSelectorOnTop="false"
+            android:clickable="false"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentStart="false"
+            android:dividerHeight="10dp"
+            android:layout_marginTop="10dp" />
+    </android.support.v4.widget.SwipeRefreshLayout>
 </RelativeLayout>

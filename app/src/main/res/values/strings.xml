@@ -48,4 +48,13 @@
     <string name="invalid_password">Password is too short</string>
     <string name="incorrect_password">Password is incorrect</string>
     <string name="field_required">This field is required</string>
+
+    <!--Event Card placeholders and headers-->
+    <string name="head_location">LOCATION</string>
+    <string name="head_date">DATE</string>
+    <string name="head_attend">ARE YOU ATTENDING?</string>
+    <string name="place_location">HUB\nFIREPLACE LOUNGE</string>
+    <string name="place_date">THU MAY 5, 2016\n5:45 PM</string>
+    <string name="button_yes">YES</string>
+    <string name="button_maybe">MAYBE</string>
 </resources>

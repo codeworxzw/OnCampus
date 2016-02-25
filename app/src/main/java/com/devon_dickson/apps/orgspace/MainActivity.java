@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.content.Context;
@@ -12,6 +13,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -30,11 +32,28 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends FragmentActivity {
+    private ProgressDialog pDialog;
+    private static String url = "http://www.devon-dickson.com/event.php";
+    // JSON Node names
+    private static final String TAG_EVENT = "event";
+    private static final String TAG_EVENTNAME = "Event Name";
+    private static final String TAG_LOCATION = "Location";
+    private static final String TAG_RAINLOCATION = "Rain Location";
+    private static final String TAG_ORG = "Org";
+    private static final String TAG_TIME = "Time";
+    private static final String TAG_RSVP = "RSVP";
+    private static JSONArray events = null;
+    public Context appContext = this;
 
     //First We Declare Titles And Icons For Our Navigation Drawer List View
     //This Icons And Titles Are holded in an Array as you can see
@@ -75,17 +94,12 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         FragmentManager fragman = getSupportFragmentManager();
         FragmentTransaction fragTransaction = fragman.beginTransaction();
         FragmentUpcoming f1 = new FragmentUpcoming();
         fragTransaction.replace(R.id.fragment_place, f1); // f1_container is your FrameLayout container
         fragTransaction.commit();
-
-    /* Assinging the toolbar object ot the view
-    and setting the the Action bar to our toolbar
-     */
-        toolbar = (Toolbar) findViewById(R.id.tool_bar);
-        setSupportActionBar(toolbar);
 
 
         mRecyclerView = (RecyclerView) findViewById(R.id.RecyclerView); // Assigning the RecyclerView Object to the xml View
@@ -101,13 +115,17 @@ public class MainActivity extends ActionBarActivity {
         final GestureDetector mGestureDetector = new GestureDetector(MainActivity.this, new GestureDetector.SimpleOnGestureListener() {
 
             @Override public boolean onSingleTapUp(MotionEvent e) {
-                return true;
+                return false;
             }
 
         });
 
 
         mRecyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
+            @Override
+            public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept){
+            }
+
             @Override
             public boolean onInterceptTouchEvent(RecyclerView recyclerView, MotionEvent motionEvent) {
                 View child = recyclerView.findChildViewUnder(motionEvent.getX(), motionEvent.getY());
@@ -182,7 +200,6 @@ public class MainActivity extends ActionBarActivity {
 
 
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

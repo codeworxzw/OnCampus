@@ -9,13 +9,22 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:screenOrientation="portrait"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme"
+        android:name="com.orm.SugarApp">
+        <meta-data android:name="DATABASE" android:value="orgSpace.db"/>
+        <meta-data android:name="Version" android:value="2"/>
+        <meta-data android:name="QUERY_LOG" android:value="false"/>
+        <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="com.devon_dickson.apps.orgspace"/>
         <activity
             android:name=".SelectSchool"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".LoginActivity"
@@ -27,19 +36,6 @@
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
             android:screenOrientation="portrait">
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-        </activity>
-        <activity
-            android:name=".Login"
-            android:label="@string/title_activity_main"
-            android:screenOrientation="portrait">
-
         </activity>
     </application>
 
