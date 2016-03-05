@@ -8,6 +8,7 @@ import com.orm.SugarRecord;
 
 
 public class Event extends SugarRecord{
+    private String eventID;
     private String name;
     private String location;
     private String rain;
@@ -17,7 +18,8 @@ public class Event extends SugarRecord{
 
     public Event() {}
 
-    public Event(String name, String location, String rain, String org, String time, String rsvp) {
+    public Event(String eventID, String name, String location, String rain, String org, String time, String rsvp) {
+        this.eventID = eventID;
         this.name = name;
         this.location = location;
         this.rain = rain;
@@ -77,5 +79,9 @@ public class Event extends SugarRecord{
 
     public void setRsvp(String rsvp) {
         this.rsvp = rsvp;
+    }
+
+    public String getEventID() {
+        return eventID;
     }
 }

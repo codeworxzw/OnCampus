@@ -1,10 +1,14 @@
 package com.devon_dickson.apps.orgspace;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -34,7 +38,7 @@ import java.util.Locale;
  */
 
 
-public class Tab1 extends Fragment{
+public class Tab1 extends Fragment {
 
     private SwipeRefreshLayout swipeContainer;
 
@@ -43,6 +47,7 @@ public class Tab1 extends Fragment{
 
     // JSON Node names
     private static final String TAG_EVENT = "event";
+    private static final String TAG_EVENTID = "Event ID";
     private static final String TAG_EVENTNAME = "Event Name";
     private static final String TAG_LOCATION = "Location";
     private static final String TAG_RAINLOCATION = "Rain Location";
@@ -55,7 +60,7 @@ public class Tab1 extends Fragment{
     JSONArray events = null;
     ArrayList<HashMap<String, String>> eventList;
 
-    @Override
+    //@Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.tab_1, container, false);
         SugarContext.init(getActivity());
@@ -66,7 +71,7 @@ public class Tab1 extends Fragment{
     }
 
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        lv = (ListView) getView().findViewById(R.id.eventList);
+        lv = (ListView) view.findViewById(R.id.eventList);
         Log.d("Is this happening?", "YES");
         Log.d("Is eventList Empty?", "" + eventList.size());
         /*ListAdapter adapter = new SimpleAdapter(
@@ -75,7 +80,7 @@ public class Tab1 extends Fragment{
                 R.id.eventLocation, R.id.eventTime });
 
         lv.setAdapter(adapter);*/
-        swipeContainer = (SwipeRefreshLayout) getView().findViewById(R.id.swipeContainer);
+        swipeContainer = (SwipeRefreshLayout) view.findViewById(R.id.swipeContainer);
         swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -99,6 +104,7 @@ public class Tab1 extends Fragment{
         List<Event> events = Event.listAll(Event.class);
         for (Event e : events) {
             HashMap<String, String> event = new HashMap<String, String>();
+            event.put(TAG_EVENTID, e.getEventID());
             event.put(TAG_EVENTNAME, e.getName());
             event.put(TAG_LOCATION, e.getLocation());
             event.put(TAG_RAINLOCATION, e.getRain());
@@ -139,11 +145,29 @@ public class Tab1 extends Fragment{
             lv.setAdapter(adapter);
             lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Log.d("Position", "" + position);
-                    Log.d("id", "" + id);
+                    Log.d("Event ID", "" + eventList.get(position).get(TAG_EVENTID));
+                    openEvent(eventList.get(position).get(TAG_EVENTID));
                 }
             });
         }
+    }
+    public void openEvent(String eventID) {
+        int ID = Integer.parseInt(eventID);
+        // Create fragment and give it an argument specifying the article it should show
+        FragmentEvent frag = new FragmentEvent();
+        Bundle args = new Bundle();
+        args.putInt("EventID", ID);
+        frag.setArguments(args);
+        FragmentManager fragManager = getActivity().getSupportFragmentManager();
+        FragmentTransaction transaction = fragManager.beginTransaction();
+
+// Replace whatever is in the fragment_container view with this fragment,
+// and add the transaction to the back stack so the user can navigate back
+        transaction.replace(R.id.fragment_place, frag);
+        transaction.addToBackStack(null);
+
+// Commit the transaction
+        transaction.commit();
     }
     public void updateEvents() {
         Log.d("getContacts status", "Executing");
@@ -168,6 +192,7 @@ public class Tab1 extends Fragment{
 
                     JSONObject c = events.getJSONObject(i);
 
+                    String eventID = c.getString(TAG_EVENTID);
                     String name = c.getString(TAG_EVENTNAME);
                     String location = c.getString(TAG_LOCATION);
                     String rain = c.getString(TAG_RAINLOCATION);
@@ -187,7 +212,7 @@ public class Tab1 extends Fragment{
                     }
 
 
-                    Event eventTableRow = new Event(name, location, rain, org, time, rsvp);
+                    Event eventTableRow = new Event(eventID, name, location, rain, org, time, rsvp);
                     eventTableRow.save();
 
                 }
