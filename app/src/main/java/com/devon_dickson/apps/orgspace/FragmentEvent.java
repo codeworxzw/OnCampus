@@ -53,8 +53,11 @@ public class FragmentEvent extends Fragment {
         textLocation = (TextView)getView().findViewById(R.id.textLocation);
         textDate = (TextView)getView().findViewById(R.id.textDate);
 
-        textHero.setText(event.getName());
-        textLocation.setText(event.getLocation());
-        textDate.setText(event.getTime());
+        //textHero.setText(event.getName());
+        textHero.setText("Title");
+        //textLocation.setText(event.getLocation());
+        textLocation.setText("Place");
+        //textDate.setText(event.getStartTime());
+        textDate.setText("Time");
     }
 }

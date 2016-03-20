@@ -41,19 +41,23 @@ import java.util.Locale;
 public class Tab1 extends Fragment {
 
     private SwipeRefreshLayout swipeContainer;
+    private ProgressDialog pDialog;
+
 
     // URL to get contacts JSON
-    private static String url = "http://www.devon-dickson.com/event.php";
+    private static String url = "http://198.199.81.7/api/v1/events";
 
     // JSON Node names
     private static final String TAG_EVENT = "event";
-    private static final String TAG_EVENTID = "Event ID";
-    private static final String TAG_EVENTNAME = "Event Name";
-    private static final String TAG_LOCATION = "Location";
-    private static final String TAG_RAINLOCATION = "Rain Location";
-    private static final String TAG_ORG = "Org";
-    private static final String TAG_TIME = "Time";
-    private static final String TAG_RSVP = "RSVP";
+    private static final String TAG_EVENTID = "id";
+    private static final String TAG_EVENTNAME = "name";
+    private static final String TAG_LOCATION = "location";
+    private static final String TAG_ORG = "org";
+    private static final String TAG_START = "startTime";
+    private static final String TAG_END = "endTime";
+    private static final String TAG_DESC = "description";
+    private static final String TAG_IMG = "image";
+    private static final String TAG_FACE = "facebook";
     private ListView lv;
     private SimpleAdapter adapter;
     // contacts JSONArray
@@ -107,10 +111,12 @@ public class Tab1 extends Fragment {
             event.put(TAG_EVENTID, e.getEventID());
             event.put(TAG_EVENTNAME, e.getName());
             event.put(TAG_LOCATION, e.getLocation());
-            event.put(TAG_RAINLOCATION, e.getRain());
+            event.put(TAG_DESC, e.getDescription());
             event.put(TAG_ORG, e.getOrg());
-            event.put(TAG_TIME, e.getTime().toUpperCase());
-            event.put(TAG_RSVP, e.getRsvp());
+            event.put(TAG_START, e.getStartTime().toUpperCase());
+            event.put(TAG_END, e.getEndTime().toUpperCase());
+            event.put(TAG_IMG, e.getImage());
+            event.put(TAG_FACE, e.getFacebook());
 
             eventList.add(event);
         }
@@ -139,7 +145,7 @@ public class Tab1 extends Fragment {
             populateList();
             ListAdapter adapter = new SimpleAdapter(
                     getActivity(), eventList,
-                    R.layout.event_row, new String[] { TAG_EVENTNAME, TAG_LOCATION, TAG_TIME, TAG_ORG }, new int[] { R.id.eventName,
+                    R.layout.event_row, new String[] { TAG_EVENTNAME, TAG_LOCATION, TAG_START, TAG_ORG }, new int[] { R.id.eventName,
                     R.id.eventLocation, R.id.eventTime });
 
             lv.setAdapter(adapter);
@@ -182,37 +188,42 @@ public class Tab1 extends Fragment {
 
         if (jsonStr != null) {
             try {
-                JSONObject jsonObj = new JSONObject(jsonStr);
-
+                //JSONObject jsonObj = new JSONObject(jsonStr);
+                JSONArray events = new JSONArray(jsonStr);
                 // Getting JSON Array node
-                events = jsonObj.getJSONArray(TAG_EVENT);
+                //events = jsonObj.getJSONArray("");
 
                 // looping through All Contacts
                 for (int i = 0; i < events.length(); i++) {
-
+                    //JSONObject c = events.getJSONObject(i);
                     JSONObject c = events.getJSONObject(i);
 
                     String eventID = c.getString(TAG_EVENTID);
                     String name = c.getString(TAG_EVENTNAME);
                     String location = c.getString(TAG_LOCATION);
-                    String rain = c.getString(TAG_RAINLOCATION);
+                    String desc = c.getString(TAG_DESC);
                     String org = c.getString(TAG_ORG);
-                    String time = c.getString(TAG_TIME);
-                    String rsvp = c.getString(TAG_RSVP);
+                    String startTime = c.getString(TAG_START);
+                    String endTime = c.getString(TAG_END);
+                    String image = c.getString(TAG_IMG);
+                    String facebook = c.getString(TAG_FACE);
 
 
 
                     SimpleDateFormat format = new SimpleDateFormat("EEE, MMM d, h:mm a", Locale.US);
                     SimpleDateFormat parserSDF = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.US);
                     try {
-                        Date date = parserSDF.parse(time);
-                        time = format.format(date);
+                        Date startDate = parserSDF.parse(startTime);
+                        startTime = format.format(startDate);
+
+                        Date endDate = parserSDF.parse(endTime);
+                        endTime = format.format(endDate);
                     } catch (ParseException e) {
                         e.printStackTrace();
                     }
 
 
-                    Event eventTableRow = new Event(eventID, name, location, rain, org, time, rsvp);
+                    Event eventTableRow = new Event(eventID, name, location, desc, org, startTime, endTime, image, facebook);
                     eventTableRow.save();
 
                 }

@@ -11,21 +11,25 @@ public class Event extends SugarRecord{
     private String eventID;
     private String name;
     private String location;
-    private String rain;
+    private String description;
     private String org;
-    private String time;
-    private String rsvp;
+    private String endTime;
+    private String startTime;
+    private String image;
+    private String facebook;
 
     public Event() {}
 
-    public Event(String eventID, String name, String location, String rain, String org, String time, String rsvp) {
+    public Event(String eventID, String name, String location, String description, String org, String startTime, String endTime, String image, String facebook) {
         this.eventID = eventID;
         this.name = name;
         this.location = location;
-        this.rain = rain;
+        this.description = description;
         this.org = org;
-        this.time = time;
-        this.rsvp = rsvp;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.image = image;
+        this.facebook = facebook;
     }
 
     @Override
@@ -49,14 +53,6 @@ public class Event extends SugarRecord{
         this.location = location;
     }
 
-    public String getRain() {
-        return rain;
-    }
-
-    public void setRain(String rain) {
-        this.rain = rain;
-    }
-
     public String getOrg() {
         return org;
     }
@@ -65,23 +61,47 @@ public class Event extends SugarRecord{
         this.org = org;
     }
 
-    public String getTime() {
-        return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
-    }
-
-    public String getRsvp() {
-        return rsvp;
-    }
-
-    public void setRsvp(String rsvp) {
-        this.rsvp = rsvp;
-    }
-
     public String getEventID() {
         return eventID;
+    }
+
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public void setFacebook(String facebook) {
+        this.facebook = facebook;
+    }
+
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public String getFacebook() {
+        return facebook;
+    }
+
+    public String getDescription() {
+        return description;
     }
 }
