@@ -20,7 +20,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/imgHero"
-                android:background="@drawable/small" />
+                android:foreground="@drawable/shape_scrim"
+                android:layout_alignParentBottom="true"
+                android:layout_alignEnd="@+id/checkHero"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -33,7 +38,8 @@
                 android:textColor="#ffffff"
                 android:background="@drawable/shape_scrim"
 
-                android:padding="10dp" />
+                android:padding="10dp"
+                android:layout_alignParentEnd="true" />
 
             <CheckBox
                 android:layout_width="wrap_content"
@@ -41,7 +47,6 @@
                 android:id="@+id/checkHero"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentEnd="true"
-                android:background="@drawable/shape_scrim"
                 android:button="@drawable/checkstar"
                 android:layout_alignParentStart="false"
                 android:checked="false"

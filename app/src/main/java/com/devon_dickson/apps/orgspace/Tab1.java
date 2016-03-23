@@ -75,6 +75,7 @@ public class Tab1 extends Fragment {
     }
 
     public void onViewCreated(View view, Bundle savedInstanceState) {
+        //getActivity().getActionBar().show();
         lv = (ListView) view.findViewById(R.id.eventList);
         Log.d("Is this happening?", "YES");
         Log.d("Is eventList Empty?", "" + eventList.size());
