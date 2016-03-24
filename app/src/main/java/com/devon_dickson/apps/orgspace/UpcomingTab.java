@@ -1,14 +1,15 @@
 package com.devon_dickson.apps.orgspace;
 
+import android.app.ActionBar;
 import android.app.ProgressDialog;
-import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -38,7 +39,7 @@ import java.util.Locale;
  */
 
 
-public class Tab1 extends Fragment {
+public class UpcomingTab extends Fragment {
 
     private SwipeRefreshLayout swipeContainer;
     private ProgressDialog pDialog;
@@ -59,13 +60,14 @@ public class Tab1 extends Fragment {
     private static final String TAG_IMG = "image";
     private static final String TAG_FACE = "facebook";
     private ListView lv;
-    private SimpleAdapter adapter;
+    private ViewPager viewPager;
     // contacts JSONArray
     JSONArray events = null;
     ArrayList<HashMap<String, String>> eventList;
 
     //@Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
         View v = inflater.inflate(R.layout.tab_1, container, false);
         SugarContext.init(getActivity());
 
@@ -102,6 +104,13 @@ public class Tab1 extends Fragment {
                 android.R.color.holo_green_light,
                 android.R.color.holo_orange_light,
                 android.R.color.holo_red_light);
+
+        ActionBar ab = getActivity().getActionBar();
+        ab.setTitle("Events");
+
+
+
+
     }
 
     protected void populateList() {
@@ -160,21 +169,14 @@ public class Tab1 extends Fragment {
     }
     public void openEvent(String eventID) {
         int ID = Integer.parseInt(eventID);
-        // Create fragment and give it an argument specifying the article it should show
-        FragmentEvent frag = new FragmentEvent();
-        Bundle args = new Bundle();
-        args.putInt("EventID", ID);
-        frag.setArguments(args);
-        FragmentManager fragManager = getActivity().getSupportFragmentManager();
-        FragmentTransaction transaction = fragManager.beginTransaction();
 
-// Replace whatever is in the fragment_container view with this fragment,
-// and add the transaction to the back stack so the user can navigate back
-        transaction.replace(R.id.fragment_place, frag);
-        transaction.addToBackStack(null);
+        Intent eventDetailsIntent = new Intent(getActivity(), EventDetailsActivity.class);
 
-// Commit the transaction
-        transaction.commit();
+        eventDetailsIntent.putExtra("EventID", ID);
+
+        getActivity().startActivity(eventDetailsIntent);
+
+
     }
     public void updateEvents() {
         Log.d("getContacts status", "Executing");
