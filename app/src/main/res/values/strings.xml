@@ -50,11 +50,16 @@
     <string name="field_required">This field is required</string>
 
     <!--Event Card placeholders and headers-->
-    <string name="head_location">LOCATION</string>
-    <string name="head_date">DATE</string>
+    <string name="head_location">Location</string>
+    <string name="head_date">Date</string>
     <string name="head_attend">ARE YOU ATTENDING?</string>
-    <string name="place_location">HUB\nFIREPLACE LOUNGE</string>
-    <string name="place_date">THU MAY 5, 2016\n5:45 PM</string>
+    <string name="head_desc">Description</string>
+
+    <string name="place_location">HUB Courtroom</string>
+    <string name="place_date">Wed, Mar 5, 5:45 PM</string>
     <string name="button_yes">YES</string>
     <string name="button_maybe">MAYBE</string>
+    <string name="place_desc">Bacon ipsum dolor amet pastrami sausage landjaeger short loin, pork belly kielbasa boudin chuck rump ham venison tri-tip shoulder kevin pig.</string>
+    <string name="head_org">Sponsored By</string>
+    <string name="place_org">PACE</string>
 </resources>

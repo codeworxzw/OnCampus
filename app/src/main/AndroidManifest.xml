@@ -38,7 +38,10 @@
 
         <activity
             android:label="@string/app_name"
-            android:name=".EventDetailsActivity">
+            android:name=".EventDetailsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:theme="@style/Theme.DesignDemo">
         </activity>
 
     </application>

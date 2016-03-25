@@ -7,8 +7,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
@@ -68,7 +66,7 @@ public class UpcomingTab extends Fragment {
     //@Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View v = inflater.inflate(R.layout.tab_1, container, false);
+        View v = inflater.inflate(R.layout.fragment_upcoming_tab, container, false);
         SugarContext.init(getActivity());
 
         eventList = new ArrayList<HashMap<String, String>>();
@@ -172,7 +170,7 @@ public class UpcomingTab extends Fragment {
 
         Intent eventDetailsIntent = new Intent(getActivity(), EventDetailsActivity.class);
 
-        eventDetailsIntent.putExtra("EventID", ID);
+       eventDetailsIntent.putExtra("EventID", ID);
 
         getActivity().startActivity(eventDetailsIntent);
 
