@@ -9,6 +9,8 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +19,7 @@ import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 import com.orm.SugarContext;
 
@@ -58,6 +61,9 @@ public class UpcomingTab extends Fragment {
     private static final String TAG_IMG = "image";
     private static final String TAG_FACE = "facebook";
     private ListView lv;
+    private RecyclerView rv;
+    private ActionBar ab;
+    private LinearLayoutManager llm;
     private ViewPager viewPager;
     // contacts JSONArray
     JSONArray events = null;
@@ -75,59 +81,29 @@ public class UpcomingTab extends Fragment {
     }
 
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        //getActivity().getActionBar().show();
-        lv = (ListView) view.findViewById(R.id.eventList);
-        Log.d("Is this happening?", "YES");
-        Log.d("Is eventList Empty?", "" + eventList.size());
-        /*ListAdapter adapter = new SimpleAdapter(
-                getActivity(), eventList,
-                R.layout.event_row, new String[] { TAG_EVENTNAME, TAG_LOCATION, TAG_TIME, TAG_ORG }, new int[] { R.id.eventName,
-                R.id.eventLocation, R.id.eventTime });
+        //lv = (ListView) view.findViewById(R.id.eventList);
+        rv = (RecyclerView) view.findViewById(R.id.rv);
+        llm = new LinearLayoutManager(getActivity());
+        rv.setLayoutManager(llm);
 
-        lv.setAdapter(adapter);*/
         swipeContainer = (SwipeRefreshLayout) view.findViewById(R.id.swipeContainer);
         swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                // Your code to refresh the list here.
-                // Make sure you call swipeContainer.setRefreshing(false)
-                // once the network request has completed successfully.
                 new GetContacts().execute();
                 Log.d("Pull to refresh", "Success!");
                 swipeContainer.setRefreshing(false);
             }
         });
+
         swipeContainer.setColorSchemeResources(
                 android.R.color.holo_blue_bright,
                 android.R.color.holo_green_light,
                 android.R.color.holo_orange_light,
                 android.R.color.holo_red_light);
 
-        ActionBar ab = getActivity().getActionBar();
+        ab = getActivity().getActionBar();
         ab.setTitle("Events");
-
-
-
-
-    }
-
-    protected void populateList() {
-        eventList.clear();
-        List<Event> events = Event.listAll(Event.class);
-        for (Event e : events) {
-            HashMap<String, String> event = new HashMap<String, String>();
-            event.put(TAG_EVENTID, e.getEventID());
-            event.put(TAG_EVENTNAME, e.getName());
-            event.put(TAG_LOCATION, e.getLocation());
-            event.put(TAG_DESC, e.getDescription());
-            event.put(TAG_ORG, e.getOrg());
-            event.put(TAG_START, e.getStartTime().toUpperCase());
-            event.put(TAG_END, e.getEndTime().toUpperCase());
-            event.put(TAG_IMG, e.getImage());
-            event.put(TAG_FACE, e.getFacebook());
-
-            eventList.add(event);
-        }
     }
 
     public class GetContacts extends AsyncTask<Void, Void, Void> {
@@ -150,32 +126,26 @@ public class UpcomingTab extends Fragment {
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
             Log.d("getContacts status", "postExecute");
-            populateList();
-            ListAdapter adapter = new SimpleAdapter(
-                    getActivity(), eventList,
-                    R.layout.event_row, new String[] { TAG_EVENTNAME, TAG_LOCATION, TAG_START, TAG_ORG }, new int[] { R.id.eventName,
-                    R.id.eventLocation, R.id.eventTime });
-
-            lv.setAdapter(adapter);
-            lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Log.d("Event ID", "" + eventList.get(position).get(TAG_EVENTID));
-                    openEvent(eventList.get(position).get(TAG_EVENTID));
+            List<Event> events = Event.listAll(Event.class);
+            rv.setAdapter(new RVAdapter(events, new RVAdapter.OnItemClickListener() {
+                @Override public void onItemClick(Event event) {
+                   openEvent(event.getEventID());
                 }
-            });
+            }));
+
         }
     }
+
     public void openEvent(String eventID) {
         int ID = Integer.parseInt(eventID);
 
         Intent eventDetailsIntent = new Intent(getActivity(), EventDetailsActivity.class);
 
-       eventDetailsIntent.putExtra("EventID", ID);
+        eventDetailsIntent.putExtra("EventID", ID);
 
         getActivity().startActivity(eventDetailsIntent);
-
-
     }
+
     public void updateEvents() {
         Log.d("getContacts status", "Executing");
         Event.deleteAll(Event.class);
@@ -189,14 +159,10 @@ public class UpcomingTab extends Fragment {
 
         if (jsonStr != null) {
             try {
-                //JSONObject jsonObj = new JSONObject(jsonStr);
                 JSONArray events = new JSONArray(jsonStr);
-                // Getting JSON Array node
-                //events = jsonObj.getJSONArray("");
 
                 // looping through All Contacts
                 for (int i = 0; i < events.length(); i++) {
-                    //JSONObject c = events.getJSONObject(i);
                     JSONObject c = events.getJSONObject(i);
 
                     String eventID = c.getString(TAG_EVENTID);
@@ -208,8 +174,6 @@ public class UpcomingTab extends Fragment {
                     String endTime = c.getString(TAG_END);
                     String image = c.getString(TAG_IMG);
                     String facebook = c.getString(TAG_FACE);
-
-
 
                     SimpleDateFormat format = new SimpleDateFormat("EEE, MMM d, h:mm a", Locale.US);
                     SimpleDateFormat parserSDF = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.US);
@@ -223,10 +187,8 @@ public class UpcomingTab extends Fragment {
                         e.printStackTrace();
                     }
 
-
                     Event eventTableRow = new Event(eventID, name, location, desc, org, startTime, endTime, image, facebook);
                     eventTableRow.save();
-
                 }
             } catch (JSONException e) {
                 e.printStackTrace();

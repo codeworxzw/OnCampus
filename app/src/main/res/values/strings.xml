@@ -62,4 +62,6 @@
     <string name="place_desc">Bacon ipsum dolor amet pastrami sausage landjaeger short loin, pork belly kielbasa boudin chuck rump ham venison tri-tip shoulder kevin pig.</string>
     <string name="head_org">Sponsored By</string>
     <string name="place_org">PACE</string>
+    <string name="place_name">Great Escape: Boston</string>
+    <string name="context">banner</string>
 </resources>
