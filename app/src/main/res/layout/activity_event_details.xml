@@ -35,7 +35,7 @@
             android:layout_height="match_parent"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             android:fitsSystemWindows="true"
-            app:contentScrim="@color/ColorPrimary"
+            app:contentScrim="@color/primary_material_light"
             app:expandedTitleMargin="20dp"
             app:expandedTitleTextAppearance="@style/toolbarTitle">
 
@@ -71,7 +71,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:background="@color/dividerColor">
+            android:background="@color/window_background">
 
 
             <LinearLayout

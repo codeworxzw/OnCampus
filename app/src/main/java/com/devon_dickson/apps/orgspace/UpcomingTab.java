@@ -129,7 +129,7 @@ public class UpcomingTab extends Fragment {
             List<Event> events = Event.listAll(Event.class);
             rv.setAdapter(new RVAdapter(events, new RVAdapter.OnItemClickListener() {
                 @Override public void onItemClick(Event event) {
-                   openEvent(event.getEventID());
+                    openEvent(event.getEventID());
                 }
             }));
 
