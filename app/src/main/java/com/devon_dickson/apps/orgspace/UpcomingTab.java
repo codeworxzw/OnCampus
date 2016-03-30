@@ -1,18 +1,24 @@
 package com.devon_dickson.apps.orgspace;
 
-import android.app.ActionBar;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -40,7 +46,7 @@ import java.util.Locale;
  */
 
 
-public class UpcomingTab extends Fragment {
+public class UpcomingTab extends Fragment implements SearchView.OnQueryTextListener{
 
     private SwipeRefreshLayout swipeContainer;
     private ProgressDialog pDialog;
@@ -64,9 +70,10 @@ public class UpcomingTab extends Fragment {
     private RecyclerView rv;
     private ActionBar ab;
     private LinearLayoutManager llm;
-    private ViewPager viewPager;
+    private RVAdapter mAdapter;
     // contacts JSONArray
-    JSONArray events = null;
+    ArrayList<Event> eventsArray;
+    List<Event> events;
     ArrayList<HashMap<String, String>> eventList;
 
     //@Override
@@ -81,7 +88,8 @@ public class UpcomingTab extends Fragment {
     }
 
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        //lv = (ListView) view.findViewById(R.id.eventList);
+        super.onViewCreated(view, savedInstanceState);
+        setHasOptionsMenu(true);
         rv = (RecyclerView) view.findViewById(R.id.rv);
         llm = new LinearLayoutManager(getActivity());
         rv.setLayoutManager(llm);
@@ -102,9 +110,52 @@ public class UpcomingTab extends Fragment {
                 android.R.color.holo_orange_light,
                 android.R.color.holo_red_light);
 
-        ab = getActivity().getActionBar();
+        ab = ((AppCompatActivity)getActivity()).getSupportActionBar();
         ab.setTitle("Events");
+
+        mAdapter = new RVAdapter(events, new RVAdapter.OnItemClickListener() {
+            @Override public void onItemClick(Event event) {
+                openEvent(event.getEventID());
+            }
+        });
     }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_main, menu);
+
+        final MenuItem item = menu.findItem(R.id.menu_search);
+        final SearchView searchView = (SearchView) MenuItemCompat.getActionView(item);
+        searchView.setOnQueryTextListener(this);
+    }
+
+    @Override
+    public boolean onQueryTextChange(String query) {
+        final List<Event> filteredEventList = filter(events, query);
+        mAdapter.animateTo(filteredEventList);
+        rv.scrollToPosition(0);
+        return true;
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        return false;
+    }
+
+    private List<Event> filter(List<Event> events, String query) {
+        query = query.toLowerCase();
+
+        final List<Event> filteredEventList = new ArrayList<>();
+        for (Event event : events) {
+            final String text = event.getName().toLowerCase();
+            if (text.contains(query)) {
+                filteredEventList.add(event);
+            }
+        }
+        return filteredEventList;
+    }
+
+
 
     public class GetContacts extends AsyncTask<Void, Void, Void> {
 
@@ -126,13 +177,19 @@ public class UpcomingTab extends Fragment {
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
             Log.d("getContacts status", "postExecute");
-            List<Event> events = Event.listAll(Event.class);
-            rv.setAdapter(new RVAdapter(events, new RVAdapter.OnItemClickListener() {
+            events = Event.listAll(Event.class);
+            eventsArray = new ArrayList<>();
+
+            for (Event e : events) {
+                eventsArray.add(e);
+            }
+
+            rv.setAdapter(mAdapter);
+            mAdapter = new RVAdapter(events, new RVAdapter.OnItemClickListener() {
                 @Override public void onItemClick(Event event) {
                     openEvent(event.getEventID());
                 }
-            }));
-
+            });
         }
     }
 

@@ -46,6 +46,58 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.EventViewHolder>{
         }
     }
 
+    public void animateTo(List<Event> models) {
+        applyAndAnimateRemovals(models);
+        applyAndAnimateAdditions(models);
+        applyAndAnimateMovedItems(models);
+    }
+
+    private void applyAndAnimateRemovals(List<Event> newModels) {
+        for (int i = events.size() - 1; i >= 0; i--) {
+            final Event model = events.get(i);
+            if (!newModels.contains(model)) {
+                removeItem(i);
+            }
+        }
+    }
+
+    private void applyAndAnimateAdditions(List<Event> newModels) {
+        for (int i = 0, count = newModels.size(); i < count; i++) {
+            final Event model = newModels.get(i);
+            if (!events.contains(model)) {
+                addItem(i, model);
+            }
+        }
+    }
+
+
+    private void applyAndAnimateMovedItems(List<Event> newModels) {
+        for (int toPosition = newModels.size() - 1; toPosition >= 0; toPosition--) {
+            final Event model = newModels.get(toPosition);
+            final int fromPosition = events.indexOf(model);
+            if (fromPosition >= 0 && fromPosition != toPosition) {
+                moveItem(fromPosition, toPosition);
+            }
+        }
+    }
+
+    public Event removeItem(int position) {
+        final Event model = events.remove(position);
+        notifyItemRemoved(position);
+        return model;
+    }
+
+    public void addItem(int position, Event model) {
+        events.add(position, model);
+        notifyItemInserted(position);
+    }
+
+    public void moveItem(int fromPosition, int toPosition) {
+        final Event model = events.remove(fromPosition);
+        events.add(toPosition, model);
+        notifyItemMoved(fromPosition, toPosition);
+    }
+
     public interface OnItemClickListener {
         void onItemClick(Event event);
     }
@@ -61,7 +113,11 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.EventViewHolder>{
 
     @Override
     public int getItemCount() {
-        return events.size();
+        try{
+            return events.size();
+        }catch(Exception e) {
+            return 0;
+        }
     }
 
     @Override

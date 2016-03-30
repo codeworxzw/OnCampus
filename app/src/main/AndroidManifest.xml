@@ -37,7 +37,7 @@
         <activity
             android:label="@string/app_name"
             android:name=".EventDetailsActivity"
-            android:theme="@style/AppCompatTheme">
+            android:theme="@style/AppThemeNoBar">
         </activity>
 
     </application>

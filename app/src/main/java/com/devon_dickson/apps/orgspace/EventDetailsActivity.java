@@ -23,6 +23,7 @@ public class EventDetailsActivity extends AppCompatActivity {
     public static TextView textHero;
     public static TextView textLocation;
     public static TextView textDate;
+    public static TextView textOrg;
     public static ImageView imageBanner;
     public static String imageURL;
     public static TextView textDescription;
@@ -44,6 +45,7 @@ public class EventDetailsActivity extends AppCompatActivity {
         //textHero = (TextView) findViewById(R.id.textHero);
         textLocation = (TextView) findViewById(R.id.textLocation);
         textDate = (TextView) findViewById(R.id.textDate);
+        textOrg = (TextView) findViewById(R.id.textOrg);
         imageBanner = (ImageView) findViewById(R.id.backdrop);
         textDescription = (TextView) findViewById(R.id.description);
         cardDate = (CardView) findViewById(R.id.cardDate);
@@ -54,6 +56,7 @@ public class EventDetailsActivity extends AppCompatActivity {
         textLocation.setText(event.getLocation());
         textDate.setText(event.getStartTime());
         textDescription.setText(event.getDescription());
+        textOrg.setText(event.getOrg());
 
         imageURL = "http://devon-dickson.com/images/events/"+ event.getImage();
         Log.d("Image URL", imageURL);
