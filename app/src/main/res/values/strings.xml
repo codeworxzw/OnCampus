@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">On Campus</string>
+    <string name="facebook_app_id">971918912885639</string>
+
 
     <!--Event Card placeholders and headers-->
     <string name="head_location">Location</string>
@@ -15,4 +17,5 @@
     <string name="head_org">Sponsored By</string>
     <string name="place_org">PACE</string>
     <string name="place_name">Great Escape: Boston</string>
+    <string name="title_activity_login">LoginActivity</string>
 </resources>
