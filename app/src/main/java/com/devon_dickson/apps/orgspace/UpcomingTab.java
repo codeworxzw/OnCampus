@@ -3,8 +3,10 @@ package com.devon_dickson.apps.orgspace;
 import android.app.ActionBar;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -21,12 +23,14 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
 import com.orm.SugarContext;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -34,6 +38,10 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 /**
  * Created by ddickson1 on 1/02/2016.
@@ -47,7 +55,7 @@ public class UpcomingTab extends Fragment {
 
 
     // URL to get contacts JSON
-    private static String url = "http://198.199.81.7/api/v1/events";
+    private static String url = "http://devon-dickson.com/api/v1/events";
 
     // JSON Node names
     private static final String TAG_EVENT = "event";
@@ -65,9 +73,12 @@ public class UpcomingTab extends Fragment {
     private ActionBar ab;
     private LinearLayoutManager llm;
     private ViewPager viewPager;
+    private String JWT;
     // contacts JSONArray
     JSONArray events = null;
     ArrayList<HashMap<String, String>> eventList;
+    private final OkHttpClient client = new OkHttpClient();
+    private final Gson gson = new Gson();
 
     //@Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -76,6 +87,9 @@ public class UpcomingTab extends Fragment {
         SugarContext.init(getActivity());
 
         eventList = new ArrayList<HashMap<String, String>>();
+
+
+
         new GetContacts().execute();
         return v;
     }
@@ -103,7 +117,8 @@ public class UpcomingTab extends Fragment {
                 android.R.color.holo_red_light);
 
         ab = getActivity().getActionBar();
-        ab.setTitle("Events");
+        ab.setTitle("On Campus");
+        ab.setSubtitle("Events");
     }
 
     public class GetContacts extends AsyncTask<Void, Void, Void> {
@@ -111,13 +126,16 @@ public class UpcomingTab extends Fragment {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            Log.d("getContacts status", "preExecute");
 
         }
 
         @Override
         protected Void doInBackground(Void... arg0) {
-            updateEvents();
+            try {
+                updateEvents();
+            }catch(Exception e) {
+
+            }
 
             return null;
         }
@@ -125,10 +143,10 @@ public class UpcomingTab extends Fragment {
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
-            Log.d("getContacts status", "postExecute");
             List<Event> events = Event.listAll(Event.class);
             rv.setAdapter(new RVAdapter(events, new RVAdapter.OnItemClickListener() {
-                @Override public void onItemClick(Event event) {
+                @Override
+                public void onItemClick(Event event) {
                     openEvent(event.getEventID());
                 }
             }));
@@ -146,16 +164,20 @@ public class UpcomingTab extends Fragment {
         getActivity().startActivity(eventDetailsIntent);
     }
 
-    public void updateEvents() {
-        Log.d("getContacts status", "Executing");
+    public void updateEvents() throws Exception{
+        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(getContext());
+        String prefJWT = settings.getString("jwt", "");
         Event.deleteAll(Event.class);
-        // Creating service handler class instance
-        ServiceHandler sh = new ServiceHandler();
 
-        // Making a request to url and getting response
-        String jsonStr = sh.makeServiceCall(url, ServiceHandler.GET);
-
-        Log.d("Response: ", "> " + jsonStr);
+        Request request = new Request.Builder()
+                .url(url+"?token=" + prefJWT)
+                .build();
+        Response response = client.newCall(request).execute();
+        if (!response.isSuccessful()) {
+            throw new IOException("Unexpected code " + response);
+        }
+        //Event event = gson.fromJson(response.body().charStream(), Event.class);
+        String jsonStr = response.body().string();
 
         if (jsonStr != null) {
             try {

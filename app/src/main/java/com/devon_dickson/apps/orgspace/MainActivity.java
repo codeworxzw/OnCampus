@@ -3,7 +3,10 @@ package com.devon_dickson.apps.orgspace;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -47,6 +50,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
     private TabPagerAdapter tabPagerAdapter;
     private ActionBar actionBar;
     private String[] tabNames = { "Upcoming", "Saved", "Attended" };
+    public String JWT;
 
 
     @Override
