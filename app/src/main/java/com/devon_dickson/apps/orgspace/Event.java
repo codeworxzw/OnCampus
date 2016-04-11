@@ -2,6 +2,11 @@ package com.devon_dickson.apps.orgspace;
 
 import com.orm.SugarRecord;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 /**
  * Created by ddickson1 on 2/5/2016.
  */
@@ -13,14 +18,16 @@ public class Event extends SugarRecord{
     private String location;
     private String description;
     private String org;
-    private String endTime;
-    private String startTime;
+    private long endTime;
+    private long startTime;
     private String image;
     private String facebook;
+    private String startTimeString;
+    private String endTimeString;
 
     public Event() {}
 
-    public Event(String eventID, String name, String location, String description, String org, String startTime, String endTime, String image, String facebook) {
+    public Event(String eventID, String name, String location, String description, String org, long startTime, long endTime, String image, String facebook) {
         this.eventID = eventID;
         this.name = name;
         this.location = location;
@@ -30,6 +37,22 @@ public class Event extends SugarRecord{
         this.endTime = endTime;
         this.image = image;
         this.facebook = facebook;
+
+
+        SimpleDateFormat format = new SimpleDateFormat("EEE, MMM d, hh:mm a", Locale.US);
+        SimpleDateFormat parserSDF = new SimpleDateFormat("yyMMddHHmmss", Locale.US);
+        try {
+            Date startDate = parserSDF.parse(startTime+"");
+            this.startTimeString = format.format(startDate);
+
+            Date endDate = parserSDF.parse(endTime+"");
+            endTimeString = format.format(endDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+
+
     }
 
     @Override
@@ -65,7 +88,7 @@ public class Event extends SugarRecord{
         return eventID;
     }
 
-    public String getStartTime() {
+    public long getStartTime() {
         return startTime;
     }
 
@@ -73,11 +96,11 @@ public class Event extends SugarRecord{
         this.description = description;
     }
 
-    public void setEndTime(String endTime) {
+    public void setEndTime(int endTime) {
         this.endTime = endTime;
     }
 
-    public void setStartTime(String startTime) {
+    public void setStartTime(int startTime) {
         this.startTime = startTime;
     }
 
@@ -89,7 +112,7 @@ public class Event extends SugarRecord{
         this.facebook = facebook;
     }
 
-    public String getEndTime() {
+    public long getEndTime() {
         return endTime;
     }
 
@@ -103,5 +126,9 @@ public class Event extends SugarRecord{
 
     public String getDescription() {
         return description;
+    }
+
+    public String getStartTimeString() {
+        return startTimeString;
     }
 }

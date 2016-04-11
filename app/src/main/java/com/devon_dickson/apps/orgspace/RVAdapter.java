@@ -1,5 +1,6 @@
 package com.devon_dickson.apps.orgspace;
 
+import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -9,6 +10,9 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 /**
@@ -74,8 +78,11 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.EventViewHolder>{
     @Override
     public void onBindViewHolder(EventViewHolder eventViewHolder, int i) {
         eventViewHolder.eventName.setText(events.get(i).getName());
-        eventViewHolder.eventTime.setText(events.get(i).getStartTime());
+        eventViewHolder.eventTime.setText(events.get(i).getStartTimeString());
         eventViewHolder.eventLocation.setText(events.get(i).getLocation());
+        String imageURL = "http://devon-dickson.com/images/events/"+ events.get(i).getImage();
+        Log.d("Image URL", imageURL);
+        Picasso.with(eventViewHolder.eventImage.getContext()).load(imageURL).error(R.drawable.image_error).resize(720, 304).centerCrop().into(eventViewHolder.eventImage);
         eventViewHolder.bind(events.get(i), listener);
     }
 

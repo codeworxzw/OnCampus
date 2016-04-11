@@ -83,7 +83,8 @@
                 android:paddingRight="10dp"
                 android:paddingTop="10dp"
                 android:background="#ffffff"
-                android:soundEffectsEnabled="false">
+                android:soundEffectsEnabled="false"
+                android:paddingBottom="0dp">
 
                 <TextView
                     android:layout_width="0dp"
@@ -124,6 +125,58 @@
                         style="?android:attr/borderlessButtonStyle"/>
                 </LinearLayout>
 
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:id="@+id/hr"
+                android:background="@drawable/border"
+                />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/layoutFaces"
+                android:background="#ffffff"
+                android:padding="8dp">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/face_devon"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/face"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/face_mark"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/mark"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/face_kristi"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/kristi"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/face_emily"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/emily"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp" />
+
             </LinearLayout>
 
 
@@ -140,8 +193,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:clickable="true"
-                    android:paddingBottom="10dp"
-                    android:paddingTop="10dp">
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
 
                     <ImageView
                         android:layout_width="48dp"
@@ -149,32 +202,21 @@
                         android:id="@+id/imageLocation"
                         android:src="@drawable/ic_directions_24dp"
                         android:layout_alignParentEnd="true"
-                        android:layout_alignParentTop="true"
+                        android:layout_alignParentTop="false"
                         android:layout_marginStart="16dp"
-                        />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/head_location"
-                        android:id="@+id/headerLocation"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentTop="true"
-                        android:textSize="18sp"
-                        android:layout_marginStart="16dp"
-                        />
+                        android:layout_centerVertical="true"
+                        android:padding="8dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/textLocation"
                         android:text="@string/place_location"
-                        android:layout_alignParentStart="true"
-                        android:layout_below="@+id/headerLocation"
+                        android:layout_alignParentStart="false"
                         android:textSize="20sp"
                         android:layout_marginStart="16dp"
-                        />
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                        android:layout_centerVertical="true" />
 
 
                 </RelativeLayout>
@@ -193,8 +235,8 @@
                     style="@style/Widget.CardContent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="10dp"
-                    android:paddingTop="10dp">
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp">
 
                     <ImageView
                         android:layout_width="48dp"
@@ -202,29 +244,21 @@
                         android:id="@+id/imageDate"
                         android:src="@drawable/ic_insert_invitation_24dp"
                         android:layout_alignParentEnd="true"
-                        android:layout_alignParentTop="true"
-                        android:layout_marginStart="16dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/head_date"
-                        android:id="@+id/headerDate"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentTop="true"
-                        android:textSize="18sp"
-                        android:layout_marginStart="16dp"/>
+                        android:layout_alignParentTop="false"
+                        android:layout_marginStart="16dp"
+                        android:layout_centerVertical="true"
+                        android:padding="8dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/place_date"
                         android:id="@+id/textDate"
-                        android:layout_alignParentStart="true"
-                        android:layout_below="@+id/headerDate"
+                        android:layout_alignParentStart="false"
                         android:textSize="20sp"
-                        android:layout_marginStart="16dp"/>
+                        android:layout_marginStart="16dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                        android:layout_centerVertical="true" />
 
                 </RelativeLayout>
 
@@ -243,37 +277,30 @@
                     style="@style/Widget.CardContent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:clickable="true">
-
-                    <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
-                        android:id="@+id/imageOrg"
-                        android:src="@drawable/pace"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentTop="true"
-                        android:layout_marginEnd="16dp"/>
+                    android:clickable="true"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/head_org"
                         android:id="@+id/headerOrg"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                        android:layout_alignParentStart="true"
-                        android:textSize="20sp"
-                        android:layout_marginStart="16dp"/>
+                        android:layout_marginStart="16dp"
+
+                        android:textSize="18sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/place_org"
                         android:id="@+id/textOrg"
-                        android:layout_toEndOf="@+id/imageOrg"
-                        android:layout_alignParentStart="true"
                         android:layout_below="@+id/headerOrg"
                         android:textSize="20sp"
-                        android:layout_marginStart="16dp"/>
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"/>
 
                     <ImageView
                         android:layout_width="48dp"
@@ -281,8 +308,10 @@
                         android:id="@+id/imageSub"
                         android:src="@drawable/ic_person_add_24dp"
                         android:layout_alignParentEnd="true"
-                        android:layout_alignParentTop="true"
-                        android:layout_marginStart="16dp"/>
+                        android:layout_alignParentTop="false"
+                        android:layout_marginStart="16dp"
+                        android:layout_centerVertical="true"
+                        android:padding="8dp" />
 
                 </RelativeLayout>
 

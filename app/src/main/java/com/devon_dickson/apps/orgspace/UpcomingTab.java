@@ -2,6 +2,7 @@ package com.devon_dickson.apps.orgspace;
 
 import android.app.ActionBar;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -79,6 +80,7 @@ public class UpcomingTab extends Fragment {
     ArrayList<HashMap<String, String>> eventList;
     private final OkHttpClient client = new OkHttpClient();
     private final Gson gson = new Gson();
+    public Context context;
 
     //@Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -88,6 +90,7 @@ public class UpcomingTab extends Fragment {
 
         eventList = new ArrayList<HashMap<String, String>>();
 
+        context = getActivity();
 
 
         new GetContacts().execute();
@@ -117,8 +120,8 @@ public class UpcomingTab extends Fragment {
                 android.R.color.holo_red_light);
 
         ab = getActivity().getActionBar();
-        ab.setTitle("On Campus");
-        ab.setSubtitle("Events");
+        ab.setTitle("Events");
+        ab.setSubtitle("On Campus");
     }
 
     public class GetContacts extends AsyncTask<Void, Void, Void> {
@@ -197,19 +200,22 @@ public class UpcomingTab extends Fragment {
                     String image = c.getString(TAG_IMG);
                     String facebook = c.getString(TAG_FACE);
 
-                    SimpleDateFormat format = new SimpleDateFormat("EEE, MMM d, h:mm a", Locale.US);
+                    long startInt = 0;
+                    long endInt = 0;
+
+                    SimpleDateFormat format = new SimpleDateFormat("yyMMddHHmmss", Locale.US);
                     SimpleDateFormat parserSDF = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.US);
                     try {
                         Date startDate = parserSDF.parse(startTime);
-                        startTime = format.format(startDate);
+                        startInt = startDate.getTime();
 
                         Date endDate = parserSDF.parse(endTime);
-                        endTime = format.format(endDate);
+                        endInt = endDate.getTime();
                     } catch (ParseException e) {
                         e.printStackTrace();
                     }
 
-                    Event eventTableRow = new Event(eventID, name, location, desc, org, startTime, endTime, image, facebook);
+                    Event eventTableRow = new Event(eventID, name, location, desc, org, startInt, endInt, image, facebook);
                     eventTableRow.save();
                 }
             } catch (JSONException e) {
