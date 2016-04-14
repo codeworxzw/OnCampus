@@ -6,7 +6,7 @@
     <!--Event Card placeholders and headers-->
     <string name="head_location">Location</string>
     <string name="head_date">Date</string>
-    <string name="head_attend">ARE YOU ATTENDING?</string>
+    <string name="head_attend">ARE YOU GOING?</string>
     <string name="head_desc">Description</string>
 
     <string name="place_location">HUB Courtroom</string>
