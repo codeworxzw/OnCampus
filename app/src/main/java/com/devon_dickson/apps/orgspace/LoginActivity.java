@@ -69,7 +69,7 @@ public class LoginActivity extends AppCompatActivity implements ApiServiceResult
                 Intent intent = new Intent(getApplicationContext(), ApiService.class);
                 intent.setAction("GET_TOKEN");
                 intent.putExtra("receiver", mReceiver);
-                intent.putExtra("UserAccesToken", result.getAccessToken().getToken());
+                intent.putExtra("UserAccessToken", result.getAccessToken().getToken());
                 intent.putExtra("FacebookID", result.getAccessToken().getUserId());
                 getApplicationContext().startService(intent);
 
@@ -94,53 +94,6 @@ public class LoginActivity extends AppCompatActivity implements ApiServiceResult
     public void onReceiveResult(int resultCode, Bundle resultData) {
         mainActivityIntent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(mainActivityIntent);
-    }
-
-    public class getAuth extends AsyncTask<Void, Void, Void> {
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            mainActivityIntent = new Intent(getApplicationContext(), MainActivity.class);
-        }
-
-        @Override
-        protected Void doInBackground(Void... arg0) {
-            try {
-                storeJWT(result);
-            }catch(Exception e) {
-                Log.d("Intent Extra", "Failed. " + e);
-            }
-
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void result) {
-            super.onPostExecute(result);
-            startActivity(mainActivityIntent);
-        }
-    }
-
-    private void storeJWT(LoginResult loginResult) throws Exception{
-        String facebook_id = loginResult.getAccessToken().getUserId();
-        String token = loginResult.getAccessToken().getToken();
-        Request request = new Request.Builder().url(authURL + "?id=" + facebook_id + "&token=" + token).build();
-        Response response = client.newCall(request).execute();
-        if(!response.isSuccessful()) {
-            Log.d("Test","failed");
-            throw new IOException("Unexpected code " + response);
-        }
-        Log.d("Test","Success!");
-        String resp = response.body().string();
-        Log.d("jwt", resp);
-
-        SharedPreferences settings = PreferenceManager
-                .getDefaultSharedPreferences(this);
-        SharedPreferences.Editor editor = settings.edit();
-        editor.putString("jwt", resp);
-        editor.commit();
-
     }
 
     @Override
