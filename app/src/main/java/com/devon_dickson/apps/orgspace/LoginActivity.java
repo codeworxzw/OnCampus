@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -38,7 +39,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity implements ApiServiceResultReceiver.Receiver{
     CallbackManager callbackManager;
     private String authURL = "http://devon-dickson.com/auth";
     private final OkHttpClient client = new OkHttpClient();
@@ -46,17 +47,16 @@ public class LoginActivity extends AppCompatActivity {
     public String jwt;
     public Intent mainActivityIntent;
     public LoginResult result;
+    public ApiServiceResultReceiver mReceiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_login);
-        Log.d("test", "Pass");
+        mReceiver = new ApiServiceResultReceiver(new Handler());
+        mReceiver.setReceiver(this);
 
-        if(AccessToken.getCurrentAccessToken()!=null) {
-            mainActivityIntent = new Intent(getApplicationContext(), MainActivity.class);
-        }
 
         callbackManager = CallbackManager.Factory.create();
         LoginButton loginButton = (LoginButton) findViewById(R.id.authButton);
@@ -66,7 +66,12 @@ public class LoginActivity extends AppCompatActivity {
             public void onSuccess(LoginResult loginResult) {
                 result = loginResult;
 
-                new getAuth().execute();
+                Intent intent = new Intent(getApplicationContext(), ApiService.class);
+                intent.setAction("GET_TOKEN");
+                intent.putExtra("receiver", mReceiver);
+                intent.putExtra("UserAccesToken", result.getAccessToken().getToken());
+                intent.putExtra("FacebookID", result.getAccessToken().getUserId());
+                getApplicationContext().startService(intent);
 
             }
 
@@ -83,6 +88,12 @@ public class LoginActivity extends AppCompatActivity {
 
         });
 
+    }
+
+    @Override
+    public void onReceiveResult(int resultCode, Bundle resultData) {
+        mainActivityIntent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(mainActivityIntent);
     }
 
     public class getAuth extends AsyncTask<Void, Void, Void> {

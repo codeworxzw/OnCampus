@@ -2,11 +2,15 @@ package com.devon_dickson.apps.orgspace;
 
 import android.app.ActionBar;
 import android.app.ProgressDialog;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.IBinder;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -49,11 +53,11 @@ import okhttp3.Response;
  */
 
 
-public class UpcomingTab extends Fragment {
+public class UpcomingTab extends Fragment implements ApiServiceResultReceiver.Receiver{
 
     private SwipeRefreshLayout swipeContainer;
-    private ProgressDialog pDialog;
 
+    public ApiServiceResultReceiver mReceiver;
 
     // URL to get contacts JSON
     private static String url = "http://devon-dickson.com/api/v1/events";
@@ -93,7 +97,16 @@ public class UpcomingTab extends Fragment {
         context = getActivity();
 
 
-        new GetContacts().execute();
+        mReceiver = new ApiServiceResultReceiver(new Handler());
+        mReceiver.setReceiver(this);
+
+        //new GetContacts().execute();
+        Intent intent = new Intent(getActivity(), ApiService.class);
+        intent.putExtra("receiver", mReceiver);
+        intent.setAction("GET_EVENTS");
+        getActivity().startService(intent);
+
+
         return v;
     }
 
@@ -107,7 +120,11 @@ public class UpcomingTab extends Fragment {
         swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                new GetContacts().execute();
+                //new GetContacts().execute();
+                Intent intent = new Intent(getActivity(), ApiService.class);
+                intent.setAction("GET_EVENTS");
+                intent.putExtra("receiver", mReceiver);
+                getActivity().startService(intent);
                 Log.d("Pull to refresh", "Success!");
                 swipeContainer.setRefreshing(false);
             }
@@ -122,6 +139,17 @@ public class UpcomingTab extends Fragment {
         ab = getActivity().getActionBar();
         ab.setTitle("Events");
         ab.setSubtitle("On Campus");
+    }
+
+    @Override
+    public void onReceiveResult(int resultCode, Bundle resultData) {
+        List<Event> events = Event.listAll(Event.class);
+        rv.setAdapter(new RVAdapter(events, new RVAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(Event event) {
+                openEvent(event.getEventID());
+            }
+        }));
     }
 
     public class GetContacts extends AsyncTask<Void, Void, Void> {

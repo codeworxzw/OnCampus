@@ -3,7 +3,7 @@
     <color name="background_material_light">#fafafa</color>
     <color name="secondary_text_default_material_dark">#b3ffffff</color>
     <color name="bright_foreground_material_light">#ffffff</color>
-    <color name="window_background">#FFF5F5F5</color>
+    <color name="window_background">#EEEEEE</color>
     <color name="primary_material_light">#03a9f4</color>
     <color name="primary_dark_material_light">#0288d1</color>
     <color name="accent_material_light">#ffd740</color>
